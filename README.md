@@ -1,4 +1,4 @@
-# Citizen
+# CITIZEN
 
 **iOS app for preparing for the Georgian citizenship exam.**
 
@@ -115,7 +115,7 @@ The app reads its backend configuration from `Citizen/Resources/Property List.pl
 
 ---
 
-## Localisation
+## Localization
 
 Three languages: **English**, **Georgian**, **Russian**. All 343 keys are translated in every language. Language is a user setting rather than a system one, so it can be changed inside the app and follows the account across devices.
 
