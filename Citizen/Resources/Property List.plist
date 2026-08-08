@@ -7,7 +7,7 @@
 	<key>Terms of Use</key>
 	<string>https://www.apple.com/legal/internet-services/itunes/dev/stdeula/</string>
 	<key>Privacy Policy</key>
-	<string></string>
+	<string>https://iyajmndpyqmkgxbfjboc.supabase.co/storage/v1/object/public/Legal/Privacy.pdf</string>
 	<key>Developer Link</key>
 	<string>https://ge-developer.tilda.ws</string>
 	<key>Weekly Subscription</key>
