@@ -22,8 +22,8 @@ extension AboutProjectView {
             EmptyView()
         } content: { _ in
             VStack(spacing: 25) {
-                logo
-                    .frame(height: 35)
+                AnimatedLogo()
+                    .padding(.horizontal, 100)
                     .padding(.bottom, 8)
                 aboutProjectForm
                 developerMichaelForm
