@@ -136,6 +136,7 @@ final class QuestionsViewModel: ObservableObject {
     private let topicID: String
     private let questionsCount: Int
     private let haptic = HapticsManager.shared
+    private let sound = SoundManager.shared
     private let voice = QuestionVoicePlayer()
     private let shuffleManager = ShuffleAnswersManager.shared
     private let repository = QuizRepository.shared
@@ -345,6 +346,7 @@ final class QuestionsViewModel: ObservableObject {
         showSubView = true
         feedbackText = FeedbackPhrase.random(correct: chosen.isCorrect)
         haptic.notification(type: chosen.isCorrect ? .success : .error)
+        sound.playSound(.answer(isCorrect: chosen.isCorrect))
     }
     
     private func next() {
@@ -372,6 +374,7 @@ final class QuestionsViewModel: ObservableObject {
             if pendingQuestions.isEmpty {
                 phase = .completed
                 finalizeCompletion()
+                sound.playSound(.success)
                 showPreview = true
                 return
             }

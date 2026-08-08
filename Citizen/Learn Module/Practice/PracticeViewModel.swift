@@ -151,6 +151,7 @@ final class PracticeViewModel: ObservableObject {
     private let questionsCount: Int
     private let isMistakeReview: Bool
     private let haptic = HapticsManager.shared
+    private let sound = SoundManager.shared
     private let voice = QuestionVoicePlayer()
     private let shuffleManager = ShuffleAnswersManager.shared
     private let shuffleQuestionsManager = ShuffleQuestionsManager.shared
@@ -311,6 +312,7 @@ final class PracticeViewModel: ObservableObject {
         showSubView = true
         feedbackText = FeedbackPhrase.random(correct: chosen.isCorrect)
         haptic.notification(type: chosen.isCorrect ? .success : .error)
+        sound.playSound(.answer(isCorrect: chosen.isCorrect))
     }
     
     private func playVoice(
