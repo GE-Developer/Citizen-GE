@@ -114,7 +114,7 @@ final class AppDataLoader {
             phase = .ready
             progressSync.syncNow(.launch)
             Task { await mediaStore.prefetchAlphabetMedia() }
-            Task { await mediaStore.prefetchQuestionAudio() }
+            Task { await mediaStore.prefetchQuestionMedia() }
             Task { try? await leaderboardStore.refresh() }
             Task { try? await contactsStore.syncIfChanged() }
         } catch is CancellationError {

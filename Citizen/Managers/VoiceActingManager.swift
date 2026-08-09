@@ -30,6 +30,8 @@ final class VoiceActingManager {
     private let notDownloadedNotice = L10n("VoiceActing.Unavailable.notDownloaded")
     private let missingNotice = L10n("VoiceActing.Unavailable.missing")
     
+    private static let interactiveFetchTimeout: TimeInterval = 12
+    
     private init() {
         isVoiceActingOn = defaults.object(forKey: key) as? Bool ?? true
     }
@@ -51,7 +53,7 @@ final class VoiceActingManager {
         guard let url = localOrBundledURL(kind, fileName: fileName) else {
             showNotice(notDownloadedNotice)
             Task {
-                _ = try? await mediaStore.fetch(kind, name: fileName)
+                _ = try? await mediaStore.fetch(kind, name: fileName, priority: .interactive)
             }
             
             return 0
@@ -77,7 +79,12 @@ final class VoiceActingManager {
         }
         
         if localOrBundledURL(kind, fileName: fileName) == nil {
-            _ = try? await mediaStore.fetch(kind, name: fileName)
+            await mediaStore.fetchWithTimeout(
+                kind,
+                name: fileName,
+                priority: .interactive,
+                timeout: Self.interactiveFetchTimeout
+            )
         }
         
         guard !Task.isCancelled else { return 0 }

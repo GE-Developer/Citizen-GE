@@ -173,6 +173,7 @@
 		AB1000010000000C /* PracticePreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1000020000000C /* PracticePreviewView.swift */; };
 		AB1000010000000D /* AnswerOptionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1000020000000D /* AnswerOptionRow.swift */; };
 		AB1000010000000E /* QuestionTextCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1000020000000E /* QuestionTextCard.swift */; };
+		AB10000100000025 /* MediaImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10000200000025 /* MediaImageView.swift */; };
 		AB1000010000000F /* AccentSentenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1000020000000F /* AccentSentenceView.swift */; };
 		AB10000100000010 /* AnswerResultBanner.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10000200000010 /* AnswerResultBanner.swift */; };
 		AB10000100000011 /* QuizCTAButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10000200000011 /* QuizCTAButton.swift */; };
@@ -440,6 +441,7 @@
 		AB1000020000000C /* PracticePreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PracticePreviewView.swift; sourceTree = "<group>"; };
 		AB1000020000000D /* AnswerOptionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerOptionRow.swift; sourceTree = "<group>"; };
 		AB1000020000000E /* QuestionTextCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionTextCard.swift; sourceTree = "<group>"; };
+		AB10000200000025 /* MediaImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaImageView.swift; sourceTree = "<group>"; };
 		AB1000020000000F /* AccentSentenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccentSentenceView.swift; sourceTree = "<group>"; };
 		AB10000200000010 /* AnswerResultBanner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerResultBanner.swift; sourceTree = "<group>"; };
 		AB10000200000011 /* QuizCTAButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizCTAButton.swift; sourceTree = "<group>"; };
@@ -698,6 +700,7 @@
 				AB10000200000009 /* AccentActionCard.swift */,
 				AB1000020000000D /* AnswerOptionRow.swift */,
 				AB1000020000000E /* QuestionTextCard.swift */,
+				AB10000200000025 /* MediaImageView.swift */,
 				AB1000020000000F /* AccentSentenceView.swift */,
 				AB10000200000010 /* AnswerResultBanner.swift */,
 				AB10000200000011 /* QuizCTAButton.swift */,
@@ -1528,6 +1531,7 @@
 				AB1000010000000C /* PracticePreviewView.swift in Sources */,
 				AB1000010000000D /* AnswerOptionRow.swift in Sources */,
 				AB1000010000000E /* QuestionTextCard.swift in Sources */,
+				AB10000100000025 /* MediaImageView.swift in Sources */,
 				AB1000010000000F /* AccentSentenceView.swift in Sources */,
 				AB10000100000010 /* AnswerResultBanner.swift in Sources */,
 				AB10000100000011 /* QuizCTAButton.swift in Sources */,
