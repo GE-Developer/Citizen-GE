@@ -35,7 +35,7 @@ extension QuestionTextCard {
             .padding(.horizontal)
             .padding(.vertical, 10)
             .background {
-                RoundedRectangle(cornerRadius: 8)
+                RoundedRectangle(cornerRadius: 15)
                     .foregroundStyle(Color.citizen.groupBackground)
             }
     }

@@ -24,6 +24,10 @@ struct OccurrenceRow: Identifiable, Hashable {
         question.question
     }
     
+    var imageUrl: String? {
+        question.imageUrl
+    }
+    
     var hasSentence: Bool {
         !sentenceSegments.isEmpty
     }

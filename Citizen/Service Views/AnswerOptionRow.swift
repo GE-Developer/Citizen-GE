@@ -28,6 +28,28 @@ struct AnswerOptionRow: View {
 // MARK: - Builder
 extension AnswerOptionRow {
     private var answerRow: some View {
+        VStack(alignment: .leading, spacing: 10) {
+            if let imageUrl = answer.imageUrl {
+                answerImage(imageUrl)
+            }
+            
+            answerContent
+        }
+        .frame(maxWidth: .infinity)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 12)
+        .background {
+            ZStack {
+                RoundedRectangle(cornerRadius: 15)
+                    .foregroundStyle(background)
+                RoundedRectangle(cornerRadius: 15)
+                    .stroke(strokeStyle, lineWidth: strokeWidth)
+            }
+        }
+        .animation(.smooth, value: revealed)
+    }
+    
+    private var answerContent: some View {
         HStack(spacing: 12) {
             if showsLabel {
                 Text(answer.label)
@@ -49,18 +71,14 @@ extension AnswerOptionRow {
                 .foregroundStyle(answer.isCorrect ? Gradient.green : Gradient.red)
                 .opacity(checkmarkOpacity)
         }
-        .frame(maxWidth: .infinity)
-        .padding(.horizontal, 16)
-        .padding(.vertical, 12)
-        .background {
-            ZStack {
-                RoundedRectangle(cornerRadius: 10)
-                    .foregroundStyle(background)
-                RoundedRectangle(cornerRadius: 10)
-                    .stroke(strokeStyle, lineWidth: strokeWidth)
-            }
-        }
-        .animation(.smooth, value: revealed)
+    }
+    
+    private func answerImage(_ name: String) -> some View {
+        MediaImageView(
+            kind: .questionImage,
+            name: name,
+            sizing: .natural(height: 120)
+        )
     }
 }
 

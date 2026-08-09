@@ -12,6 +12,7 @@ struct HintAnswerRow: Identifiable, Hashable {
     let translation: String?
     let isCorrect: Bool
     let audioUrl: String?
+    let imageUrl: String?
     
     var id: String { label }
 }

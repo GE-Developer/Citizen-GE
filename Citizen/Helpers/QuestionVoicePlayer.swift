@@ -17,38 +17,47 @@ final class QuestionVoicePlayer {
     private(set) var playingPart: QuestionVoicePart?
     
     private var playbackTask: Task<Void, Never>?
+    private var playbackGeneration = 0
     
     private let voiceActing = VoiceActingManager.shared
     
     func play(part: QuestionVoicePart?, file: String?, announceUnavailable: Bool = true) {
-        guard isEnabled else { return }
+        guard isEnabled else {
+            stop()
+            return
+        }
+        
         playbackTask?.cancel()
+        playbackGeneration &+= 1
+        let generation = playbackGeneration
         
         playingPart = part
         
         playbackTask = Task { [weak self] in
             guard let self else { return }
+            
+            defer {
+                if self.playbackGeneration == generation {
+                    self.playingPart = nil
+                }
+            }
+            
             let duration = await voiceActing.playWhenReady(
                 .questionAudio,
                 fileName: file,
                 announceUnavailable: announceUnavailable
             )
             
-            guard !Task.isCancelled else { return }
-            guard duration > 0, part != nil else {
-                self.playingPart = nil
-                return
-            }
+            guard self.playbackGeneration == generation, duration > 0, part != nil else { return }
             
             try? await Task.sleep(for: .seconds(duration))
-            guard !Task.isCancelled else { return }
-            self.playingPart = nil
         }
     }
     
     func stop() {
         playbackTask?.cancel()
         playbackTask = nil
+        playbackGeneration &+= 1
         playingPart = nil
         voiceActing.stop()
     }

@@ -5,11 +5,12 @@
 //  Created by GE-Developer
 //
 
-enum MediaKind {
+enum MediaKind: CaseIterable {
     case alphabetImage
     case alphabetLetterAudio
     case alphabetExampleAudio
     case questionAudio
+    case questionImage
     
     var folder: String {
         switch self {
@@ -19,24 +20,19 @@ enum MediaKind {
             return "Alphabet/Letter Audio"
         case .alphabetExampleAudio:
             return "Alphabet/Example Audio"
-        case .questionAudio:
+        case .questionAudio, .questionImage:
             return "Questions"
         }
     }
     
     var versionRow: String {
         switch self {
-        case .alphabetImage, .alphabetLetterAudio, .alphabetExampleAudio, .questionAudio:
+        case .alphabetImage,
+                .alphabetLetterAudio,
+                .alphabetExampleAudio,
+                .questionAudio,
+                .questionImage:
             return "media"
-        }
-    }
-    
-    var isDisplayed: Bool {
-        switch self {
-        case .alphabetImage:
-            return true
-        case .alphabetLetterAudio, .alphabetExampleAudio, .questionAudio:
-            return false
         }
     }
 }

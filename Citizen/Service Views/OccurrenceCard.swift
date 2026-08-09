@@ -65,14 +65,28 @@ extension OccurrenceCard {
     }
     
     private var questionText: some View {
-        Text(row.questionText)
-            .font(.subheadline)
-            .fontWeight(.regular)
-            .fontDesign(.rounded)
-            .foregroundStyle(Color.citizen.mainText)
-            .multilineTextAlignment(.leading)
-            .lineLimit(3)
-            .frame(maxWidth: .infinity, alignment: .leading)
+        HStack(spacing: 12) {
+            if let imageUrl = row.imageUrl {
+                thumbnail(imageUrl)
+            }
+            
+            Text(row.questionText)
+                .font(.subheadline)
+                .fontWeight(.regular)
+                .fontDesign(.rounded)
+                .foregroundStyle(Color.citizen.mainText)
+                .multilineTextAlignment(.leading)
+                .lineLimit(3)
+                .frame(maxWidth: .infinity, alignment: .leading)
+        }
+    }
+    
+    private func thumbnail(_ name: String) -> some View {
+        MediaImageView(
+            kind: .questionImage,
+            name: name,
+            sizing: .thumbnail(side: 64)
+        )
     }
     
     private var sentence: some View {
