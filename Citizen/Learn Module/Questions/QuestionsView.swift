@@ -75,6 +75,10 @@ extension QuestionsView {
             VStack(spacing: 20) {
                 questionCard
                 
+                if let imageUrl = vm.currentQuestion.imageUrl {
+                    questionImage(imageUrl)
+                }
+                
                 if vm.currentQuestion.additionalText != nil {
                     sentenceView
                 }
@@ -110,6 +114,14 @@ extension QuestionsView {
         )
         .onTapGesture { vm.questionTapped() }
         .allowsHitTesting(vm.isVoiceActingEnabled)
+    }
+    
+    private func questionImage(_ name: String) -> some View {
+        MediaImageView(
+            kind: .questionImage,
+            name: name,
+            sizing: .natural(height: 200)
+        )
     }
     
     private var sentenceView: some View {

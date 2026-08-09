@@ -431,5 +431,6 @@ final class QuestionsViewModel: ObservableObject {
         ? currentQuestion.answers.shuffled()
         : currentQuestion.answers
         refreshSavedState()
+        MediaStore.shared.prepareImages(for: [currentQuestion] + pendingQuestions.prefix(2))
     }
 }

@@ -78,7 +78,7 @@ extension HintView {
             .padding(.horizontal)
             .padding(.vertical, 10)
             .background {
-                RoundedRectangle(cornerRadius: 8)
+                RoundedRectangle(cornerRadius: 15)
                     .foregroundStyle(Color.citizen.groupBackground)
             }
             
@@ -88,6 +88,10 @@ extension HintView {
             
             if vm.showsVoiceButtons {
                 voiceButton { vm.playQuestion() }
+            }
+            
+            if let imageUrl = vm.question.imageUrl {
+                questionImage(imageUrl)
             }
         }
     }
@@ -160,59 +164,81 @@ extension HintView {
     private var showAnswerRow: some View {
         CustomToggleRow(isOn: $vm.showCorrectAnswer, title: vm.showAnswerTitle)
             .background {
-                RoundedRectangle(cornerRadius: 10)
+                RoundedRectangle(cornerRadius: 15)
                     .foregroundStyle(Color.citizen.groupBackground)
             }
     }
     
     private func answerRow(_ row: HintAnswerRow) -> some View {
-        HStack(spacing: 12) {
-            Text(row.label)
-                .font(.title3)
-                .fontWeight(.regular)
-                .fontDesign(.rounded)
-                .foregroundStyle(Gradient.accent)
-                .frame(width: 18, alignment: .leading)
-            
-            VStack(alignment: .leading, spacing: 4) {
-                RichTextView(
-                    segments: row.segments,
-                    highlightsDictionaryWords: true,
-                    onTapWord: vm.selectWord
-                )
-                .font(.title3)
-                .fontDesign(.rounded)
-                .foregroundStyle(Color.citizen.mainText)
-                
-                if let translation = row.translation {
-                    Text(translation)
-                        .font(.subheadline)
-                        .fontDesign(.rounded)
-                        .foregroundStyle(Color.citizen.secondaryText)
-                }
-                
-                if vm.showsVoiceButtons {
-                    voiceButton { vm.playAnswer(row) }
-                        .padding(.top, 4)
-                }
+        VStack(alignment: .leading, spacing: 10) {
+            if let imageUrl = row.imageUrl {
+                answerImage(imageUrl)
             }
             
-            Spacer(minLength: 0)
-            
-            if row.isCorrect {
-                Image.system.checkmarkAndXmark(true)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(Gradient.green)
-                    .opacity(vm.showCorrectAnswer ? 1 : 0)
+            HStack(spacing: 12) {
+                Text(row.label)
+                    .font(.title3)
+                    .fontWeight(.regular)
+                    .fontDesign(.rounded)
+                    .foregroundStyle(Gradient.accent)
+                    .frame(width: 18, alignment: .leading)
+                
+                VStack(alignment: .leading, spacing: 4) {
+                    RichTextView(
+                        segments: row.segments,
+                        highlightsDictionaryWords: true,
+                        onTapWord: vm.selectWord
+                    )
+                    .font(.title3)
+                    .fontDesign(.rounded)
+                    .foregroundStyle(Color.citizen.mainText)
+                    
+                    if let translation = row.translation {
+                        Text(translation)
+                            .font(.subheadline)
+                            .fontDesign(.rounded)
+                            .foregroundStyle(Color.citizen.secondaryText)
+                    }
+                    
+                    if vm.showsVoiceButtons {
+                        voiceButton { vm.playAnswer(row) }
+                            .padding(.top, 4)
+                    }
+                }
+                
+                Spacer(minLength: 0)
+                
+                if row.isCorrect {
+                    Image.system.checkmarkAndXmark(true)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(Gradient.green)
+                        .opacity(vm.showCorrectAnswer ? 1 : 0)
+                }
             }
         }
         .frame(maxWidth: .infinity)
         .padding(.horizontal, 16)
         .padding(.vertical, 12)
         .background {
-            RoundedRectangle(cornerRadius: 10)
+            RoundedRectangle(cornerRadius: 15)
                 .foregroundStyle(Color.citizen.groupBackground)
         }
+    }
+    
+    private func questionImage(_ name: String) -> some View {
+        MediaImageView(
+            kind: .questionImage,
+            name: name,
+            sizing: .natural(height: 200)
+        )
+    }
+    
+    private func answerImage(_ name: String) -> some View {
+        MediaImageView(
+            kind: .questionImage,
+            name: name,
+            sizing: .natural(height: 120)
+        )
     }
     
     private func voiceButton(action: @escaping () -> Void) -> some View {

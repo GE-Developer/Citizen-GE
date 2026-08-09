@@ -77,7 +77,8 @@ final class HintViewModel {
                 segments: answer.text.asRichSegments,
                 translation: answerTranslations[answer.label],
                 isCorrect: answer.isCorrect,
-                audioUrl: answer.audioUrl
+                audioUrl: answer.audioUrl,
+                imageUrl: answer.imageUrl
             )
         }
         

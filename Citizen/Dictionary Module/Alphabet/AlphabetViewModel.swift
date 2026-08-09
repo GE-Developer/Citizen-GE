@@ -5,7 +5,6 @@
 //  Created by GE-Developer
 //
 
-import CoreGraphics
 import Foundation
 
 @MainActor
@@ -74,14 +73,6 @@ final class AlphabetViewModel {
         playbackTask = nil
         isPlaying = false
         voiceActingManager.stop()
-    }
-    
-    func exampleImage(for letter: AlphabetLetter) -> CGImage? {
-        MediaStore.shared.image(.alphabetImage, name: letter.exampleImage)
-    }
-    
-    func isExampleImageLoading(for letter: AlphabetLetter) -> Bool {
-        MediaStore.shared.isLoading(.alphabetImage, name: letter.exampleImage)
     }
     
     func isSelected(_ letter: AlphabetLetter) -> Bool {

@@ -129,23 +129,12 @@ extension AlphabetView {
         }
     }
     
-    @ViewBuilder
     private func exampleImage(_ letter: AlphabetLetter) -> some View {
-        if let cgImage = vm.exampleImage(for: letter) {
-            Image(cgImage, scale: 1, label: Text(letter.exampleWord))
-                .resizable()
-                .scaledToFill()
-        } else if vm.isExampleImageLoading(for: letter) {
-            Color.clear
-                .overlay { ProgressView().tint(Color.citizen.secondaryText) }
-        } else {
-            Color.clear
-                .overlay {
-                    Image.system.photo
-                        .font(.title2)
-                        .foregroundStyle(Color.citizen.secondaryText)
-                }
-        }
+        MediaImageView(
+            kind: .alphabetImage,
+            name: letter.exampleImage,
+            sizing: .container(contentMode: .fill)
+        )
     }
     
     @ViewBuilder

@@ -86,6 +86,15 @@ extension PracticeView {
         ZStack(alignment: .top) {
             VStack(spacing: 20) {
                 questionCard
+                
+                if let imageUrl = vm.currentQuestion.imageUrl {
+                    MediaImageView(
+                        kind: .questionImage,
+                        name: imageUrl,
+                        sizing: .natural(height: 200)
+                    )
+                }
+                
                 if vm.currentQuestion.additionalText != nil {
                     sentenceView
                 }
