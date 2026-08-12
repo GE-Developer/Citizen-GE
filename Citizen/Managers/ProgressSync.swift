@@ -39,7 +39,8 @@ final class ProgressSync {
         "TopicStatsEntity",
         "SavedWordEntity",
         "QuestionFolderEntity",
-        "SavedQuestionEntity"
+        "SavedQuestionEntity",
+        "ExamAttemptEntity"
     ]
     
     private init() {}
@@ -294,7 +295,8 @@ final class ProgressSync {
             topicStats: TopicStatsStorage.shared.snapshotItems(),
             savedWords: SavedWordsStore.shared.snapshotItems(),
             folders: SavedQuestionsStore.shared.snapshotFolders(),
-            savedQuestions: SavedQuestionsStore.shared.snapshotSavedQuestions()
+            savedQuestions: SavedQuestionsStore.shared.snapshotSavedQuestions(),
+            examAttempts: ExamHistoryStorage.shared.snapshotItems()
         )
     }
     
@@ -309,6 +311,7 @@ final class ProgressSync {
         
         TopicStatsStorage.shared.restore(snapshot.topicStats)
         SavedWordsStore.shared.restore(snapshot.savedWords)
+        ExamHistoryStorage.shared.restore(snapshot.examAttempts)
         
         SavedQuestionsStore.shared.restore(
             folders: snapshot.folders,
@@ -350,6 +353,7 @@ final class ProgressSync {
         TopicStatsStorage.shared.removeAll()
         SavedWordsStore.shared.removeAll()
         SavedQuestionsStore.shared.removeAll()
+        ExamHistoryStorage.shared.removeAll()
     }
     
     private func hasAnyLocalProgress() -> Bool {

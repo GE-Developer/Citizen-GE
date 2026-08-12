@@ -39,9 +39,20 @@ struct ProgressSnapshot: Codable, Sendable, Equatable {
         let createdAt: Double
     }
     
+    struct ExamAttemptItem: Codable, Sendable, Equatable {
+        let attemptID: String
+        let kind: String
+        let categoryID: String?
+        let date: Double
+        let correct: Int
+        let total: Int
+        let isPassed: Bool
+        let wrongQuestionIDs: [String]?
+    }
+    
     enum CodingKeys: String, CodingKey {
         case schemaVersion, answers, mistakePool, topicStats
-        case savedWords, folders, savedQuestions
+        case savedWords, folders, savedQuestions, examAttempts
     }
     
     var isEmpty: Bool {
@@ -51,6 +62,7 @@ struct ProgressSnapshot: Codable, Sendable, Equatable {
         && savedWords.isEmpty
         && folders.isEmpty
         && savedQuestions.isEmpty
+        && examAttempts.isEmpty
     }
     
     let schemaVersion: Int
@@ -61,6 +73,7 @@ struct ProgressSnapshot: Codable, Sendable, Equatable {
     let savedWords: [SavedWordItem]
     let folders: [FolderItem]
     let savedQuestions: [SavedQuestionItem]
+    let examAttempts: [ExamAttemptItem]
     
     static let currentSchemaVersion = 1
 }
@@ -77,5 +90,6 @@ extension ProgressSnapshot {
         savedWords = try container.decode([SavedWordItem].self, forKey: .savedWords)
         folders = try container.decode([FolderItem].self, forKey: .folders)
         savedQuestions = try container.decode([SavedQuestionItem].self, forKey: .savedQuestions)
+        examAttempts = try container.decodeIfPresent([ExamAttemptItem].self, forKey: .examAttempts) ?? []
     }
 }

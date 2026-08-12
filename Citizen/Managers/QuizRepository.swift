@@ -114,6 +114,12 @@ final class QuizRepository {
         }
     }
     
+    func question(byID id: String) -> Question? {
+        guard let (ci, ti, qi) = locate(questionID: id) else { return nil }
+        
+        return catalog.categories[ci].topics[ti].questions[qi]
+    }
+    
     func topic(byID id: String) -> Topic? {
         catalog
             .categories

@@ -1,7 +1,6 @@
 {
   "sourceLanguage" : "en",
   "strings" : {
-    "%@" : {},
     "%lld Dictionary.Alphabet.lettersCount" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3909,19 +3908,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Questions and the interface are in Georgian. A basic command of the language is expected: vocabulary, grammar and reading comprehension."
+            "value" : "Questions and the interface are in Georgian. A basic command of the language is expected — around A2–B1: vocabulary, grammar and reading comprehension."
           }
         },
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "კითხვები და ინტერფეისი ქართულ ენაზეა. საჭიროა ენის საბაზისო ცოდნა: ლექსიკა, გრამატიკა და წაკითხულის გაგება."
+            "value" : "კითხვები და ინტერფეისი ქართულ ენაზეა. საჭიროა ენის საბაზისო ცოდნა — დაახლოებით A2–B1: ლექსიკა, გრამატიკა და წაკითხულის გაგება."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Вопросы и интерфейс — на грузинском языке. Требуется базовое владение: лексика, грамматика и понимание прочитанного."
+            "value" : "Вопросы и интерфейс — на грузинском языке. Требуется базовое владение, примерно уровень A2–B1: лексика, грамматика и понимание прочитанного."
           }
         }
       }
@@ -4047,19 +4046,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Arrive 15 minutes early. The test is taken on a computer: three blocks of 10 questions, four answer options each and 20 minutes per block."
+            "value" : "Bring your ID and the registration memo, and arrive 15 minutes early. The test is taken on a computer: three blocks of 10 questions, four answer options each and 20 minutes per block."
           }
         },
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "მისვლა საჭიროა 15 წუთით ადრე. ტესტი ბარდება კომპიუტერზე: სამი ბლოკი 10-10 კითხვით, თითოეულს ოთხი პასუხის ვარიანტი და ბლოკზე 20 წუთი."
+            "value" : "თან იქონიეთ პირადობის დამადასტურებელი დოკუმენტი და სარეგისტრაციო ცნობა, მიდით 15 წუთით ადრე. ტესტი ბარდება კომპიუტერზე: სამი ბლოკი 10-10 კითხვით, თითოეულს ოთხი პასუხის ვარიანტი და ბლოკზე 20 წუთი."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Прийти нужно за 15 минут. Тест сдают на компьютере: три блока по 10 вопросов, у каждого четыре варианта ответа и 20 минут на блок."
+            "value" : "Возьмите документ, удостоверяющий личность, и памятку о регистрации, приходите за 15 минут. Тест сдают на компьютере: три блока по 10 вопросов, у каждого четыре варианта ответа и 20 минут на блок."
           }
         }
       }
@@ -4484,19 +4483,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "How the exam works"
+            "value" : "Rules"
           }
         },
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "როგორ ტარდება გამოცდა"
+            "value" : "წესები"
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Как проходит экзамен"
+            "value" : "Правила"
           }
         }
       }
@@ -4750,75 +4749,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Отмена"
-          }
-        }
-      }
-    },
-    "Exam.Session.ExitAlert.confirm" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Leave"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "გასვლა"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Выйти"
-          }
-        }
-      }
-    },
-    "Exam.Session.ExitAlert.message" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Points will be deducted and the attempt will count as failed."
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ქულები ჩამოგეჭრებათ და მცდელობა ჩაუბარებლად ჩაითვლება."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Баллы будут списаны, а попытка засчитана как не сданная."
-          }
-        }
-      }
-    },
-    "Exam.Session.ExitAlert.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Leave the exam?"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "გავიდეთ გამოცდიდან?"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Выйти из экзамена?"
           }
         }
       }
@@ -11079,6 +11009,98 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Очистить"
+          }
+        }
+      }
+    },
+    "Exam.History.mistakesTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mistakes"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "შეცდომები"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибки"
+          }
+        }
+      }
+    },
+    "Exam.Rules.Fee.noShow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Missing your scheduled date counts as a used attempt"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "დანიშნულ დღეს გამოუცხადებლობა ჩაითვლება გამოყენებულ მცდელობად"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неявка в назначенный день засчитывается как использованная попытка"
+          }
+        }
+      }
+    },
+    "Exam.Rules.Tip5.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Law is the hardest block"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "სამართალი ყველაზე რთული ბლოკია"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Право — самый сложный блок"
+          }
+        }
+      }
+    },
+    "Exam.Rules.Tip5.text" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Those who have taken the exam call the law questions the trickiest: the wording is legal and the options look alike. Learn the exact phrasing, not the general idea."
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "გამოცდის ჩამბარებლები სამართლის კითხვებს ყველაზე რთულად მიიჩნევენ: ფორმულირება იურიდიულია და ვარიანტები ერთმანეთს ჰგავს. ისწავლეთ ზუსტი ფორმულირება და არა ზოგადი აზრი."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сдававшие называют вопросы по праву самыми коварными: формулировки юридические, а варианты похожи друг на друга. Учите точную формулировку, а не общий смысл."
           }
         }
       }
