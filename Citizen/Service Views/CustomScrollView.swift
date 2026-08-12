@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct CustomScrollView<Content: View, NavBarItems: View>: View {
+struct CustomScrollView<Content: View, NavBarItems: View, CenterItems: View>: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.parentTab) private var parentTab
     @Environment(TabBarState.self) private var tabBarState
@@ -23,12 +23,14 @@ struct CustomScrollView<Content: View, NavBarItems: View>: View {
     private let tabBarIsVisible: Bool
     private let showNavBar: Bool
     private let onRefresh: (() async -> Void)?
+    private let onBack: (() -> Void)?
     
     private let pullDistance: CGFloat = 90
     private let refreshBandHeight: CGFloat = 52
     private let minSpinnerDuration: TimeInterval = 0.6
     
     @ViewBuilder private let navBarItems: () -> NavBarItems
+    @ViewBuilder private let centerItems: () -> CenterItems
     @ViewBuilder private let content: (ScrollViewProxy) -> Content
     
     init(
@@ -38,7 +40,9 @@ struct CustomScrollView<Content: View, NavBarItems: View>: View {
         withBackButton: Bool = true,
         tabBarIsVisible: Bool = false,
         onRefresh: (() async -> Void)? = nil,
+        onBack: (() -> Void)? = nil,
         @ViewBuilder navBarItems: @escaping () -> NavBarItems,
+        @ViewBuilder centerItems: @escaping () -> CenterItems,
         @ViewBuilder content: @escaping (ScrollViewProxy) -> Content
     ) {
         self.title = title
@@ -48,7 +52,9 @@ struct CustomScrollView<Content: View, NavBarItems: View>: View {
         self.tabBarIsVisible = tabBarIsVisible
         self.showNavBar = true
         self.onRefresh = onRefresh
+        self.onBack = onBack
         self.navBarItems = navBarItems
+        self.centerItems = centerItems
         self.content = content
     }
     
@@ -63,8 +69,9 @@ struct CustomScrollView<Content: View, NavBarItems: View>: View {
                     subTitle: subTitle,
                     alignment: alignment,
                     withBackButton: withBackButton,
-                    onBack: { dismiss() },
-                    navBarItems: navBarItems
+                    onBack: onBack ?? { dismiss() },
+                    navBarItems: navBarItems,
+                    centerItems: centerItems
                 )
                 .zIndex(2)
             }
@@ -84,7 +91,34 @@ struct CustomScrollView<Content: View, NavBarItems: View>: View {
     }
 }
 
-extension CustomScrollView where NavBarItems == EmptyView {
+extension CustomScrollView where CenterItems == EmptyView {
+    init(
+        title: String,
+        subTitle: String? = nil,
+        alignment: HorizontalAlignment = .leading,
+        withBackButton: Bool = true,
+        tabBarIsVisible: Bool = false,
+        onRefresh: (() async -> Void)? = nil,
+        onBack: (() -> Void)? = nil,
+        @ViewBuilder navBarItems: @escaping () -> NavBarItems,
+        @ViewBuilder content: @escaping (ScrollViewProxy) -> Content
+    ) {
+        self.init(
+            title: title,
+            subTitle: subTitle,
+            alignment: alignment,
+            withBackButton: withBackButton,
+            tabBarIsVisible: tabBarIsVisible,
+            onRefresh: onRefresh,
+            onBack: onBack,
+            navBarItems: navBarItems,
+            centerItems: { EmptyView() },
+            content: content
+        )
+    }
+}
+
+extension CustomScrollView where NavBarItems == EmptyView, CenterItems == EmptyView {
     init(
         tabBarIsVisible: Bool = false,
         @ViewBuilder content: @escaping (ScrollViewProxy) -> Content
@@ -96,7 +130,9 @@ extension CustomScrollView where NavBarItems == EmptyView {
         self.tabBarIsVisible = tabBarIsVisible
         self.showNavBar = false
         self.onRefresh = nil
+        self.onBack = nil
         self.navBarItems = { EmptyView() }
+        self.centerItems = { EmptyView() }
         self.content = content
     }
 }
@@ -201,7 +237,7 @@ fileprivate final class NavBarState {
 }
 
 // MARK: - Navigation Bar
-private struct NavigationBarView<NavBarItems: View>: View {
+private struct NavigationBarView<NavBarItems: View, CenterItems: View>: View {
     private var textAlignment: TextAlignment {
         switch alignment {
         case .leading:  return .leading
@@ -221,6 +257,7 @@ private struct NavigationBarView<NavBarItems: View>: View {
     private let smallNavBarHeight: CGFloat = 50.0
     
     @ViewBuilder private let navBarItems: () -> NavBarItems
+    @ViewBuilder private let centerItems: () -> CenterItems
     
     init(
         navState: NavBarState,
@@ -229,7 +266,8 @@ private struct NavigationBarView<NavBarItems: View>: View {
         alignment: HorizontalAlignment,
         withBackButton: Bool,
         onBack: @escaping () -> Void,
-        @ViewBuilder navBarItems: @escaping () -> NavBarItems
+        @ViewBuilder navBarItems: @escaping () -> NavBarItems,
+        @ViewBuilder centerItems: @escaping () -> CenterItems
     ) {
         self.navState = navState
         self.title = title
@@ -238,6 +276,7 @@ private struct NavigationBarView<NavBarItems: View>: View {
         self.withBackButton = withBackButton
         self.onBack = onBack
         self.navBarItems = navBarItems
+        self.centerItems = centerItems
     }
     
     var body: some View {
@@ -261,6 +300,8 @@ private struct NavigationBarView<NavBarItems: View>: View {
             }
             .padding(.trailing, 14)
             .padding(.leading, withBackButton ? 0 : 20)
+            
+            centerItems()
         }
         .frame(height: navState.isLarge ? largeNavBarHeight : smallNavBarHeight)
     }

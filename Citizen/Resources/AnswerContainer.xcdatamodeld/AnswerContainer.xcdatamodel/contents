@@ -1,5 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23605" systemVersion="23J520" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="ExamAttemptEntity" representedClassName="ExamAttemptEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="attemptID" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="categoryID" optional="YES" attributeType="String"/>
+        <attribute name="correct" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="isPassed" optional="YES" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="kind" optional="YES" attributeType="String"/>
+        <attribute name="total" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="wrongQuestionIDs" optional="YES" attributeType="String"/>
+    </entity>
     <entity name="GlobalMistakeEntity" representedClassName="GlobalMistakeEntity" syncable="YES" codeGenerationType="class">
         <attribute name="questionID" optional="YES" attributeType="String"/>
     </entity>

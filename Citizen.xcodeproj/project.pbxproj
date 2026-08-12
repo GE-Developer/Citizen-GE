@@ -190,6 +190,21 @@
 		AB10000100000023 /* ExamView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10000200000023 /* ExamView.swift */; };
 		AB10000100000024 /* ExamViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10000200000024 /* ExamViewModel.swift */; };
 		AB10000100000025 /* MediaImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10000200000025 /* MediaImageView.swift */; };
+		AB10000100000026 /* ExamSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10000200000026 /* ExamSession.swift */; };
+		AB10000100000027 /* ExamAttempt.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10000200000027 /* ExamAttempt.swift */; };
+		AB10000100000028 /* ExamHistoryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10000200000028 /* ExamHistoryStorage.swift */; };
+		AB10000100000029 /* ExamHeroCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10000200000029 /* ExamHeroCard.swift */; };
+		AB1000010000002A /* ExamSectionRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1000020000002A /* ExamSectionRow.swift */; };
+		AB1000010000002B /* ExamSessionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1000020000002B /* ExamSessionViewModel.swift */; };
+		AB1000010000002C /* ExamSessionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1000020000002C /* ExamSessionView.swift */; };
+		AB1000010000002D /* ExamProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1000020000002D /* ExamProgressBar.swift */; };
+		AB1000010000002E /* ExamSessionBottomBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1000020000002E /* ExamSessionBottomBar.swift */; };
+		AB1000010000002F /* ExamResultsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1000020000002F /* ExamResultsView.swift */; };
+		AB10000100000030 /* ExamStatsStrip.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10000200000030 /* ExamStatsStrip.swift */; };
+		AB10000100000031 /* ExamRulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10000200000031 /* ExamRulesView.swift */; };
+		AB10000100000032 /* ExamRulesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10000200000032 /* ExamRulesViewModel.swift */; };
+		AB10000100000033 /* ExamHistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10000200000033 /* ExamHistoryView.swift */; };
+		AB10000100000034 /* ExamHistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB10000200000034 /* ExamHistoryViewModel.swift */; };
 		AB1100012EC60316002D12D1 /* ShuffleAnswersManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1100022EC60316002D12D1 /* ShuffleAnswersManager.swift */; };
 		AB12000100000001 /* SupabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12000200000001 /* SupabaseService.swift */; };
 		AB12000100000002 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB12000200000002 /* AuthManager.swift */; };
@@ -252,7 +267,6 @@
 		AB22000100000005 /* ContactDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22000200000005 /* ContactDetailView.swift */; };
 		AB22000100000006 /* ContactDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB22000200000006 /* ContactDetailViewModel.swift */; };
 		AB23000100000001 /* ScoreEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB23000200000001 /* ScoreEvent.swift */; };
-		AB23000100000002 /* ScoreWeights.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB23000200000002 /* ScoreWeights.swift */; };
 		AB23000100000003 /* ScoreStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB23000200000003 /* ScoreStorage.swift */; };
 		AB23000100000004 /* ScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB23000200000004 /* ScoreManager.swift */; };
 		AB24000100000001 /* MoodChipView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB24000200000001 /* MoodChipView.swift */; };
@@ -458,6 +472,21 @@
 		AB10000200000023 /* ExamView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamView.swift; sourceTree = "<group>"; };
 		AB10000200000024 /* ExamViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamViewModel.swift; sourceTree = "<group>"; };
 		AB10000200000025 /* MediaImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MediaImageView.swift; sourceTree = "<group>"; };
+		AB10000200000026 /* ExamSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSession.swift; sourceTree = "<group>"; };
+		AB10000200000027 /* ExamAttempt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamAttempt.swift; sourceTree = "<group>"; };
+		AB10000200000028 /* ExamHistoryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamHistoryStorage.swift; sourceTree = "<group>"; };
+		AB10000200000029 /* ExamHeroCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamHeroCard.swift; sourceTree = "<group>"; };
+		AB1000020000002A /* ExamSectionRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSectionRow.swift; sourceTree = "<group>"; };
+		AB1000020000002B /* ExamSessionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSessionViewModel.swift; sourceTree = "<group>"; };
+		AB1000020000002C /* ExamSessionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSessionView.swift; sourceTree = "<group>"; };
+		AB1000020000002D /* ExamProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamProgressBar.swift; sourceTree = "<group>"; };
+		AB1000020000002E /* ExamSessionBottomBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamSessionBottomBar.swift; sourceTree = "<group>"; };
+		AB1000020000002F /* ExamResultsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamResultsView.swift; sourceTree = "<group>"; };
+		AB10000200000030 /* ExamStatsStrip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamStatsStrip.swift; sourceTree = "<group>"; };
+		AB10000200000031 /* ExamRulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamRulesView.swift; sourceTree = "<group>"; };
+		AB10000200000032 /* ExamRulesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamRulesViewModel.swift; sourceTree = "<group>"; };
+		AB10000200000033 /* ExamHistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamHistoryView.swift; sourceTree = "<group>"; };
+		AB10000200000034 /* ExamHistoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExamHistoryViewModel.swift; sourceTree = "<group>"; };
 		AB1100022EC60316002D12D1 /* ShuffleAnswersManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShuffleAnswersManager.swift; sourceTree = "<group>"; };
 		AB12000200000001 /* SupabaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SupabaseService.swift; sourceTree = "<group>"; };
 		AB12000200000002 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
@@ -520,7 +549,6 @@
 		AB22000200000005 /* ContactDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailView.swift; sourceTree = "<group>"; };
 		AB22000200000006 /* ContactDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailViewModel.swift; sourceTree = "<group>"; };
 		AB23000200000001 /* ScoreEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreEvent.swift; sourceTree = "<group>"; };
-		AB23000200000002 /* ScoreWeights.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreWeights.swift; sourceTree = "<group>"; };
 		AB23000200000003 /* ScoreStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreStorage.swift; sourceTree = "<group>"; };
 		AB23000200000004 /* ScoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreManager.swift; sourceTree = "<group>"; };
 		AB24000200000001 /* MoodChipView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoodChipView.swift; sourceTree = "<group>"; };
@@ -746,7 +774,6 @@
 				AB15000200000006 /* Mood.swift */,
 				AB16000200000001 /* MediaKind.swift */,
 				AB17000200000001 /* QuestionVoicePart.swift */,
-				AB23000200000002 /* ScoreWeights.swift */,
 			);
 			path = Enums;
 			sourceTree = "<group>";
@@ -807,6 +834,7 @@
 				AADD0002000100B1 /* ResourceProvider.swift */,
 				AADD0002000100B2 /* ResourceDownloader.swift */,
 				AB16000200000002 /* MediaStore.swift */,
+				AB10000200000028 /* ExamHistoryStorage.swift */,
 				1FACC00700000000000000A7 /* AvatarStore.swift */,
 				1FACC00D0000000000000AD0 /* AvatarService.swift */,
 				1FACC00F0000000000000AF0 /* FeedbackManager.swift */,
@@ -956,6 +984,8 @@
 				AADD000200010001 /* WordEntry.swift */,
 				AAEE0002000100B3 /* AlphabetLetter.swift */,
 				AAEE0002000100A3 /* OccurrenceRow.swift */,
+				AB10000200000026 /* ExamSession.swift */,
+				AB10000200000027 /* ExamAttempt.swift */,
 				AB04000200000002 /* TopicStats.swift */,
 				AB07000200000001 /* HintAnswerRow.swift */,
 				AB08000200000001 /* QuestionFolder.swift */,
@@ -1173,6 +1203,18 @@
 			isa = PBXGroup;
 			children = (
 				AB10000200000022 /* ExamConfig.swift */,
+				AB10000200000029 /* ExamHeroCard.swift */,
+				AB1000020000002A /* ExamSectionRow.swift */,
+				AB1000020000002B /* ExamSessionViewModel.swift */,
+				AB1000020000002C /* ExamSessionView.swift */,
+				AB1000020000002D /* ExamProgressBar.swift */,
+				AB1000020000002E /* ExamSessionBottomBar.swift */,
+				AB1000020000002F /* ExamResultsView.swift */,
+				AB10000200000030 /* ExamStatsStrip.swift */,
+				AB10000200000031 /* ExamRulesView.swift */,
+				AB10000200000032 /* ExamRulesViewModel.swift */,
+				AB10000200000033 /* ExamHistoryView.swift */,
+				AB10000200000034 /* ExamHistoryViewModel.swift */,
 				AB10000200000023 /* ExamView.swift */,
 				AB10000200000024 /* ExamViewModel.swift */,
 			);
@@ -1461,7 +1503,6 @@
 				AB22000100000005 /* ContactDetailView.swift in Sources */,
 				AB22000100000006 /* ContactDetailViewModel.swift in Sources */,
 				AB23000100000001 /* ScoreEvent.swift in Sources */,
-				AB23000100000002 /* ScoreWeights.swift in Sources */,
 				AB23000100000003 /* ScoreStorage.swift in Sources */,
 				AB23000100000004 /* ScoreManager.swift in Sources */,
 				AB20000100000005 /* LeaderboardViewModel.swift in Sources */,
@@ -1532,6 +1573,21 @@
 				AB1000010000000D /* AnswerOptionRow.swift in Sources */,
 				AB1000010000000E /* QuestionTextCard.swift in Sources */,
 				AB10000100000025 /* MediaImageView.swift in Sources */,
+				AB10000100000026 /* ExamSession.swift in Sources */,
+				AB10000100000027 /* ExamAttempt.swift in Sources */,
+				AB10000100000028 /* ExamHistoryStorage.swift in Sources */,
+				AB10000100000029 /* ExamHeroCard.swift in Sources */,
+				AB1000010000002A /* ExamSectionRow.swift in Sources */,
+				AB1000010000002B /* ExamSessionViewModel.swift in Sources */,
+				AB1000010000002C /* ExamSessionView.swift in Sources */,
+				AB1000010000002D /* ExamProgressBar.swift in Sources */,
+				AB1000010000002E /* ExamSessionBottomBar.swift in Sources */,
+				AB1000010000002F /* ExamResultsView.swift in Sources */,
+				AB10000100000030 /* ExamStatsStrip.swift in Sources */,
+				AB10000100000031 /* ExamRulesView.swift in Sources */,
+				AB10000100000032 /* ExamRulesViewModel.swift in Sources */,
+				AB10000100000033 /* ExamHistoryView.swift in Sources */,
+				AB10000100000034 /* ExamHistoryViewModel.swift in Sources */,
 				AB1000010000000F /* AccentSentenceView.swift in Sources */,
 				AB10000100000010 /* AnswerResultBanner.swift in Sources */,
 				AB10000100000011 /* QuizCTAButton.swift in Sources */,

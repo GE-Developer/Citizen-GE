@@ -13,23 +13,32 @@ enum ScoreEvent: Sendable {
     case mistakeFixed
     case topicCompleted
     case examPassed
+    case examFailed
+    case sectionExamPassed
+    case sectionExamFailed
     
     var points: Int {
         switch self {
         case .solvedFirstTime:
-            return ScoreWeights.solvedFirstTime
+            return 1
         case .solvedAgain:
-            return ScoreWeights.solvedAgain
+            return 1
         case .forgotten:
-            return ScoreWeights.forgotten
+            return -5
         case .practiceSolved:
-            return ScoreWeights.practiceSolved
+            return 1
         case .mistakeFixed:
-            return ScoreWeights.mistakeFixed
+            return 1
         case .topicCompleted:
-            return ScoreWeights.topicCompleted
+            return 3
         case .examPassed:
-            return ScoreWeights.examPassed
+            return 10
+        case .examFailed:
+            return -10
+        case .sectionExamPassed:
+            return 3
+        case .sectionExamFailed:
+            return -10
         }
     }
 }
