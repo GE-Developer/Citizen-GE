@@ -626,6 +626,64 @@
 			path = Sounds;
 			sourceTree = "<group>";
 		};
+		1F58AD0D302CFBC100B9F80C /* Exam Components */ = {
+			isa = PBXGroup;
+			children = (
+				AB10000200000029 /* ExamHeroCard.swift */,
+				AB1000020000002A /* ExamSectionRow.swift */,
+				AB10000200000030 /* ExamStatsStrip.swift */,
+				AB1000020000002D /* ExamProgressBar.swift */,
+				AB1000020000002E /* ExamSessionBottomBar.swift */,
+			);
+			path = "Exam Components";
+			sourceTree = "<group>";
+		};
+		1F58AD0E302CFD3300B9F80C /* Exam */ = {
+			isa = PBXGroup;
+			children = (
+				AB10000200000023 /* ExamView.swift */,
+				AB10000200000024 /* ExamViewModel.swift */,
+			);
+			path = Exam;
+			sourceTree = "<group>";
+		};
+		1F58AD0F302CFD4300B9F80C /* Mistakes */ = {
+			isa = PBXGroup;
+			children = (
+				AB10000200000035 /* ExamMistakesView.swift */,
+				AB10000200000036 /* ExamMistakesViewModel.swift */,
+			);
+			path = Mistakes;
+			sourceTree = "<group>";
+		};
+		1F58AD10302CFD4D00B9F80C /* History */ = {
+			isa = PBXGroup;
+			children = (
+				AB10000200000033 /* ExamHistoryView.swift */,
+				AB10000200000034 /* ExamHistoryViewModel.swift */,
+			);
+			path = History;
+			sourceTree = "<group>";
+		};
+		1F58AD11302CFD5700B9F80C /* Rules */ = {
+			isa = PBXGroup;
+			children = (
+				AB10000200000031 /* ExamRulesView.swift */,
+				AB10000200000032 /* ExamRulesViewModel.swift */,
+			);
+			path = Rules;
+			sourceTree = "<group>";
+		};
+		1F58AD12302CFD6F00B9F80C /* Exam Session */ = {
+			isa = PBXGroup;
+			children = (
+				AB1000020000002B /* ExamSessionViewModel.swift */,
+				AB1000020000002C /* ExamSessionView.swift */,
+				AB1000020000002F /* ExamResultsView.swift */,
+			);
+			path = "Exam Session";
+			sourceTree = "<group>";
+		};
 		1F6F25903003E25D003492DA /* AppIcon */ = {
 			isa = PBXGroup;
 			children = (
@@ -685,6 +743,7 @@
 		1F7368E72EC6023F002D12D1 /* Service Views */ = {
 			isa = PBXGroup;
 			children = (
+				1F58AD0D302CFBC100B9F80C /* Exam Components */,
 				1FE28A3B3026123C00A55AE1 /* Auth Components */,
 				AB30000200000002 /* LoadingView.swift */,
 				1F7368D42EC6023F002D12D1 /* CustomScrollView.swift */,
@@ -1207,22 +1266,11 @@
 		AB10000300000006 /* Exam */ = {
 			isa = PBXGroup;
 			children = (
-				AB10000200000029 /* ExamHeroCard.swift */,
-				AB1000020000002A /* ExamSectionRow.swift */,
-				AB1000020000002B /* ExamSessionViewModel.swift */,
-				AB1000020000002C /* ExamSessionView.swift */,
-				AB1000020000002D /* ExamProgressBar.swift */,
-				AB1000020000002E /* ExamSessionBottomBar.swift */,
-				AB1000020000002F /* ExamResultsView.swift */,
-				AB10000200000030 /* ExamStatsStrip.swift */,
-				AB10000200000031 /* ExamRulesView.swift */,
-				AB10000200000032 /* ExamRulesViewModel.swift */,
-				AB10000200000033 /* ExamHistoryView.swift */,
-				AB10000200000034 /* ExamHistoryViewModel.swift */,
-				AB10000200000035 /* ExamMistakesView.swift */,
-				AB10000200000036 /* ExamMistakesViewModel.swift */,
-				AB10000200000023 /* ExamView.swift */,
-				AB10000200000024 /* ExamViewModel.swift */,
+				1F58AD12302CFD6F00B9F80C /* Exam Session */,
+				1F58AD11302CFD5700B9F80C /* Rules */,
+				1F58AD10302CFD4D00B9F80C /* History */,
+				1F58AD0F302CFD4300B9F80C /* Mistakes */,
+				1F58AD0E302CFD3300B9F80C /* Exam */,
 			);
 			path = Exam;
 			sourceTree = "<group>";
