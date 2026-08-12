@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExamRulesView: View {
     @State private var vm = ExamRulesViewModel()
-
+    
     var body: some View {
         rules
     }
@@ -33,7 +33,7 @@ extension ExamRulesView {
             }
         }
     }
-
+    
     private var heroCard: some View {
         VStack(spacing: 16) {
             VStack(spacing: 10) {
@@ -45,24 +45,34 @@ extension ExamRulesView {
                         Circle()
                             .fill(Gradient.accent)
                     }
-
+                
                 Text(vm.heroTitle)
                     .font(.title2)
                     .fontWeight(.bold)
                     .foregroundStyle(Color.citizen.mainText)
-
+                
                 Text(vm.heroSubtitle)
                     .font(.subheadline)
                     .foregroundStyle(Color.citizen.secondaryText)
                     .multilineTextAlignment(.center)
             }
             .fontDesign(.rounded)
-
+            
             ExamStatsStrip(
                 stats: [
-                    ExamHeroStat(value: vm.questionsValue, caption: vm.questionsCaption),
-                    ExamHeroStat(value: vm.limitValue, caption: vm.limitCaption),
-                    ExamHeroStat(value: vm.thresholdValue, caption: vm.thresholdCaption, isAccent: true)
+                    ExamHeroStat(
+                        value: vm.questionsValue,
+                        caption: vm.questionsCaption
+                    ),
+                    ExamHeroStat(
+                        value: vm.limitValue,
+                        caption: vm.limitCaption
+                    ),
+                    ExamHeroStat(
+                        value: vm.thresholdValue,
+                        caption: vm.thresholdCaption,
+                        isAccent: true
+                    )
                 ]
             )
         }
@@ -81,17 +91,17 @@ extension ExamRulesView {
                 .strokeBorder(Gradient.accent.opacity(0.45), lineWidth: 1)
         }
     }
-
+    
     private var languageCallout: some View {
         HStack(alignment: .top, spacing: 14) {
             iconBadge(.system.language, color: Color.citizen.accent)
-
+            
             VStack(alignment: .leading, spacing: 4) {
                 Text(vm.languageTitle)
                     .font(.headline)
                     .fontWeight(.bold)
                     .foregroundStyle(Color.citizen.mainText)
-
+                
                 Text(vm.languageText)
                     .font(.footnote)
                     .foregroundStyle(Color.citizen.secondaryText)
@@ -104,11 +114,11 @@ extension ExamRulesView {
         .background(Color.citizen.groupBackground)
         .clipShape(RoundedRectangle(cornerRadius: 15))
     }
-
+    
     private var stepsSection: some View {
         VStack(alignment: .leading, spacing: 14) {
             sectionHeader(vm.stepsTitle)
-
+            
             VStack(spacing: 0) {
                 ForEach(vm.steps) { step in
                     stepRow(step, isLast: step.id == vm.steps.last?.id)
@@ -116,18 +126,18 @@ extension ExamRulesView {
             }
         }
     }
-
+    
     private var eligibilitySection: some View {
         VStack(alignment: .leading, spacing: 14) {
             sectionHeader(vm.eligibilityTitle)
-
+            
             VStack(spacing: 0) {
                 ForEach(Array(vm.eligibility.enumerated()), id: \.element.id) { index, row in
                     if index > 0 {
                         Divider()
                             .padding(.leading, 16)
                     }
-
+                    
                     eligibilityRow(row)
                 }
             }
@@ -135,24 +145,24 @@ extension ExamRulesView {
             .clipShape(RoundedRectangle(cornerRadius: 15))
         }
     }
-
+    
     private var feesSection: some View {
         VStack(alignment: .leading, spacing: 14) {
             sectionHeader(vm.feesTitle)
-
+            
             VStack(spacing: 0) {
                 ForEach(Array(vm.fees.enumerated()), id: \.offset) { index, fee in
                     if index > 0 {
                         Divider()
                             .padding(.leading, 16)
                     }
-
+                    
                     HStack(alignment: .top, spacing: 12) {
                         Circle()
                             .fill(Gradient.accent)
                             .frame(width: 7, height: 7)
                             .padding(.top, 6)
-
+                        
                         Text(fee)
                             .font(.subheadline)
                             .fontDesign(.rounded)
@@ -166,11 +176,11 @@ extension ExamRulesView {
             .clipShape(RoundedRectangle(cornerRadius: 15))
         }
     }
-
+    
     private var bansSection: some View {
         VStack(alignment: .leading, spacing: 14) {
             sectionHeader(vm.bansTitle)
-
+            
             VStack(alignment: .leading, spacing: 12) {
                 ForEach(Array(vm.bans.enumerated()), id: \.offset) { _, ban in
                     HStack(alignment: .top, spacing: 12) {
@@ -183,7 +193,7 @@ extension ExamRulesView {
                                 Circle()
                                     .fill(Color.citizen.redLight.opacity(0.15))
                             }
-
+                        
                         Text(ban)
                             .font(.subheadline)
                             .fontDesign(.rounded)
@@ -203,11 +213,11 @@ extension ExamRulesView {
             }
         }
     }
-
+    
     private var tipsSection: some View {
         VStack(alignment: .leading, spacing: 14) {
             sectionHeader(vm.tipsTitle)
-
+            
             VStack(spacing: 12) {
                 ForEach(vm.tips) { tip in
                     tipCard(tip)
@@ -215,7 +225,7 @@ extension ExamRulesView {
             }
         }
     }
-
+    
     private var footerNote: some View {
         Text(vm.footer)
             .font(.caption)
@@ -224,7 +234,7 @@ extension ExamRulesView {
             .multilineTextAlignment(.leading)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
-
+    
     private func sectionHeader(_ title: String) -> some View {
         Text(title)
             .font(.title3)
@@ -233,12 +243,12 @@ extension ExamRulesView {
             .foregroundStyle(Color.citizen.mainText)
             .frame(maxWidth: .infinity, alignment: .leading)
     }
-
+    
     private func stepRow(_ step: ExamRuleStep, isLast: Bool) -> some View {
         HStack(alignment: .top, spacing: 14) {
             VStack(spacing: 0) {
                 numberBadge(step.number)
-
+                
                 if !isLast {
                     Capsule()
                         .fill(Color.citizen.darkGroupBackground)
@@ -246,13 +256,13 @@ extension ExamRulesView {
                         .frame(maxHeight: .infinity)
                 }
             }
-
+            
             VStack(alignment: .leading, spacing: 4) {
                 Text(step.title)
                     .font(.headline)
                     .fontWeight(.bold)
                     .foregroundStyle(Color.citizen.mainText)
-
+                
                 Text(step.text)
                     .font(.footnote)
                     .foregroundStyle(Color.citizen.secondaryText)
@@ -266,7 +276,7 @@ extension ExamRulesView {
             .padding(.bottom, isLast ? 0 : 12)
         }
     }
-
+    
     private func numberBadge(_ number: Int) -> some View {
         Text(verbatim: "\(number)")
             .font(.subheadline)
@@ -279,7 +289,7 @@ extension ExamRulesView {
                     .fill(Gradient.accent)
             }
     }
-
+    
     private func eligibilityRow(_ row: ExamEligibilityRow) -> some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(alignment: .firstTextBaseline, spacing: 10) {
@@ -288,9 +298,9 @@ extension ExamRulesView {
                     .fontWeight(.semibold)
                     .foregroundStyle(Color.citizen.mainText)
                     .multilineTextAlignment(.leading)
-
+                
                 Spacer(minLength: 0)
-
+                
                 if !row.isExempt {
                     Text(row.note)
                         .font(.caption)
@@ -299,7 +309,7 @@ extension ExamRulesView {
                         .layoutPriority(1)
                 }
             }
-
+            
             HStack(spacing: 6) {
                 if row.isExempt {
                     chip(row.note, color: Color.citizen.greenLight)
@@ -313,17 +323,17 @@ extension ExamRulesView {
         .fontDesign(.rounded)
         .padding(16)
     }
-
+    
     private func tipCard(_ tip: ExamRuleTip) -> some View {
         HStack(alignment: .top, spacing: 14) {
             iconBadge(.system.hint, color: Color.citizen.yellowLight)
-
+            
             VStack(alignment: .leading, spacing: 4) {
                 Text(tip.title)
                     .font(.headline)
                     .fontWeight(.bold)
                     .foregroundStyle(Color.citizen.mainText)
-
+                
                 Text(tip.text)
                     .font(.footnote)
                     .foregroundStyle(Color.citizen.secondaryText)
@@ -336,7 +346,7 @@ extension ExamRulesView {
         .background(Color.citizen.groupBackground)
         .clipShape(RoundedRectangle(cornerRadius: 15))
     }
-
+    
     private func iconBadge(_ icon: Image, color: Color) -> some View {
         icon
             .font(.system(size: 18, weight: .semibold))
@@ -346,7 +356,7 @@ extension ExamRulesView {
             .background(color.opacity(0.15))
             .clipShape(RoundedRectangle(cornerRadius: 12))
     }
-
+    
     private func chip(_ text: String, color: Color) -> some View {
         Text(text)
             .font(.caption2)

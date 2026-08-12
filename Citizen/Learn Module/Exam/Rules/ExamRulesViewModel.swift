@@ -13,20 +13,20 @@ final class ExamRulesViewModel {
     var questionsValue: String {
         "\(ExamConfig.totalQuestions(sections: sectionCount))"
     }
-
+    
     var limitValue: String {
         L10n("\(ExamConfig.fullMinutes(sections: sectionCount)) Main.Exam.preview")
     }
-
+    
     var thresholdValue: String {
         let required = ExamConfig.requiredCorrectTotal(sections: sectionCount)
         return "\(required)/\(ExamConfig.totalQuestions(sections: sectionCount))"
     }
-
+    
     private var sectionCount: Int {
         repository.catalog.categories.count
     }
-
+    
     let title = L10n("Exam.Rules.title")
     let heroTitle = L10n("Exam.Rules.Hero.title")
     let heroSubtitle = L10n("Exam.Rules.Hero.subtitle")
@@ -41,7 +41,7 @@ final class ExamRulesViewModel {
     let bansTitle = L10n("Exam.Rules.Bans.title")
     let tipsTitle = L10n("Exam.Rules.Tips.title")
     let footer = L10n("Exam.Rules.footer")
-
+    
     let steps: [ExamRuleStep] = [
         ExamRuleStep(
             number: 1,
@@ -69,7 +69,7 @@ final class ExamRulesViewModel {
             text: L10n("Exam.Rules.Step5.text")
         )
     ]
-
+    
     let eligibility: [ExamEligibilityRow] = [
         ExamEligibilityRow(
             id: "naturalization",
@@ -96,21 +96,21 @@ final class ExamRulesViewModel {
             subjects: []
         )
     ]
-
+    
     let fees = [
         L10n("Exam.Rules.Fee.first"),
         L10n("Exam.Rules.Fee.retry"),
         L10n("Exam.Rules.Fee.unlimited"),
         L10n("Exam.Rules.Fee.noShow")
     ]
-
+    
     let bans = [
         L10n("Exam.Rules.Ban.materials"),
         L10n("Exam.Rules.Ban.talking"),
         L10n("Exam.Rules.Ban.leaving"),
         L10n("Exam.Rules.Ban.photo")
     ]
-
+    
     let tips: [ExamRuleTip] = [
         ExamRuleTip(
             title: L10n("Exam.Rules.Tip1.title"),
@@ -133,9 +133,9 @@ final class ExamRulesViewModel {
             text: L10n("Exam.Rules.Tip5.text")
         )
     ]
-
+    
     private let repository = QuizRepository.shared
-
+    
     init() {}
 }
 
@@ -144,7 +144,7 @@ struct ExamRuleStep: Identifiable {
     let number: Int
     let title: String
     let text: String
-
+    
     var id: Int {
         number
     }
@@ -155,7 +155,7 @@ struct ExamEligibilityRow: Identifiable {
     var isExempt: Bool {
         subjects.isEmpty
     }
-
+    
     let id: String
     let title: String
     let note: String
@@ -167,7 +167,7 @@ enum ExamSubject: Identifiable {
     case language
     case history
     case law
-
+    
     @MainActor
     var title: String {
         switch self {
@@ -179,7 +179,7 @@ enum ExamSubject: Identifiable {
             return L10n("Exam.Rules.Subject.law")
         }
     }
-
+    
     var id: Self {
         self
     }
@@ -189,7 +189,7 @@ enum ExamSubject: Identifiable {
 struct ExamRuleTip: Identifiable {
     let title: String
     let text: String
-
+    
     var id: String {
         title
     }

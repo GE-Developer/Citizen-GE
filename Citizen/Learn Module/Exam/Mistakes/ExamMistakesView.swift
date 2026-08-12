@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ExamMistakesView: View {
     @State private var vm: ExamMistakesViewModel
-
+    
     init(route: ExamMistakesRoute) {
         _vm = State(initialValue: ExamMistakesViewModel(route: route))
     }
-
+    
     var body: some View {
         mistakes
             .navigationDestination(item: $vm.selectedQuestion) { question in
@@ -34,7 +34,7 @@ extension ExamMistakesView {
                     count: vm.questionsCountText,
                     suffix: vm.questionsCountSuffix
                 )
-
+                
                 if vm.isEmpty {
                     emptyState
                 } else {
@@ -43,7 +43,7 @@ extension ExamMistakesView {
             }
         }
     }
-
+    
     private var emptyState: some View {
         EmptyStateView(
             icon: .system.warning,
@@ -52,7 +52,7 @@ extension ExamMistakesView {
         )
         .padding(.top, 40)
     }
-
+    
     private var questionsList: some View {
         ForEach(vm.rows) { row in
             OccurrenceCard(row: row, action: { vm.select(row) })

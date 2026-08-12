@@ -10,13 +10,13 @@ import SwiftUI
 struct ExamSessionView: View {
     @Environment(\.dismiss) private var dismiss
     @Environment(\.scenePhase) private var scenePhase
-
+    
     @State private var vm: ExamSessionViewModel
-
+    
     init(session: ExamSession) {
         _vm = State(initialValue: ExamSessionViewModel(session: session))
     }
-
+    
     var body: some View {
         sessionView
             .onAppear { vm.start() }
@@ -58,7 +58,7 @@ extension ExamSessionView {
                     answeredFlags: vm.currentSection.items.map(\.isAnswered),
                     currentIndex: vm.itemIndex
                 )
-
+                
                 question
                     .padding(.bottom, isFaceIDPhone ? 70 : 86)
             }
@@ -68,7 +68,7 @@ extension ExamSessionView {
         .overlay { interstitial }
         .overlay { results }
     }
-
+    
     private var question: some View {
         ZStack(alignment: .top) {
             VStack(spacing: 20) {
@@ -76,7 +76,7 @@ extension ExamSessionView {
                     text: vm.currentItem.question.question,
                     isVoicing: false
                 )
-
+                
                 if let imageUrl = vm.currentItem.question.imageUrl {
                     MediaImageView(
                         kind: .questionImage,
@@ -84,11 +84,11 @@ extension ExamSessionView {
                         sizing: .natural(height: 200)
                     )
                 }
-
+                
                 if vm.currentItem.question.additionalText != nil {
                     sentenceView
                 }
-
+                
                 VStack {
                     ForEach(vm.currentItem.shuffledAnswers) { answer in
                         AnswerOptionRow(
@@ -107,7 +107,7 @@ extension ExamSessionView {
         }
         .animation(.smooth, value: vm.questionStep)
     }
-
+    
     private var sentenceView: some View {
         AccentSentenceView(
             segments: (vm.currentItem.question.additionalText ?? "").asRichSegments
@@ -116,7 +116,7 @@ extension ExamSessionView {
         .fontWeight(.medium)
         .fontDesign(.rounded)
     }
-
+    
     private var navBarCenter: some View {
         VStack(spacing: 2) {
             Text(timerInterval: vm.sectionStart...vm.sectionDeadline, countsDown: true)
@@ -125,7 +125,7 @@ extension ExamSessionView {
                 .monospacedDigit()
                 .foregroundStyle(Color.citizen.blackAndWhite)
                 .opacity(vm.isSectionRunning ? 1 : 0)
-
+            
             Text(vm.sectionLabel)
                 .font(.subheadline)
                 .fontWeight(.light)
@@ -136,7 +136,7 @@ extension ExamSessionView {
         .minimumScaleFactor(0.7)
         .padding(.horizontal, 70)
     }
-
+    
     private var bottomBar: some View {
         ExamSessionBottomBar(
             ctaTitle: vm.ctaTitle,
@@ -147,7 +147,7 @@ extension ExamSessionView {
             onCTA: { vm.ctaPressed() }
         )
     }
-
+    
     private var interstitial: some View {
         Group {
             if vm.showInterstitial {
@@ -159,7 +159,7 @@ extension ExamSessionView {
                             .tracking(1)
                             .foregroundStyle(Color.citizen.secondaryText)
                     }
-
+                    
                     Text(vm.announcedSectionName)
                         .font(.title)
                         .fontWeight(.bold)
@@ -178,7 +178,7 @@ extension ExamSessionView {
         }
         .animation(.easeInOut(duration: 0.25), value: vm.showInterstitial)
     }
-
+    
     private var results: some View {
         Group {
             if vm.showResults {

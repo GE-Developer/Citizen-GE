@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ExamView: View {
     @State private var vm = ExamViewModel()
-
+    
     var body: some View {
         exam
             .navigationDestination(item: $vm.activeSession) { session in
@@ -37,7 +37,7 @@ extension ExamView {
             }
         }
     }
-
+    
     private var heroCard: some View {
         ExamHeroCard(
             icon: Image.system.timer,
@@ -52,11 +52,11 @@ extension ExamView {
             action: { vm.startFullExam() }
         )
     }
-
+    
     private var sectionsBlock: some View {
         VStack(spacing: 12) {
             sectionsHeader
-
+            
             ForEach(vm.sectionRows) { row in
                 ExamSectionRow(
                     icon: .system.graduationCap,
@@ -66,16 +66,16 @@ extension ExamView {
             }
         }
     }
-
+    
     private var sectionsHeader: some View {
         HStack(alignment: .firstTextBaseline) {
             Text(vm.sectionsTitle)
                 .font(.title3)
                 .fontWeight(.bold)
                 .foregroundStyle(Color.citizen.mainText)
-
+            
             Spacer()
-
+            
             Text(vm.sectionsCaption)
                 .font(.footnote)
                 .foregroundStyle(Color.citizen.secondaryText)
