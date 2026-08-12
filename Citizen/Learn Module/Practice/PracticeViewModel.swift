@@ -36,6 +36,10 @@ final class PracticeViewModel: ObservableObject {
         voice.playingPart
     }
     
+    var voicePlaybackID: Int {
+        voice.playbackGeneration
+    }
+    
     var isVoiceActingEnabled: Bool {
         !isMistakeReview && voice.isEnabled
     }

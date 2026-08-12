@@ -85,8 +85,8 @@ extension View {
         modifier(Shimmer())
     }
     
-    func voiceHighlight(isActive: Bool) -> some View {
-        modifier(VoiceHighlight(isActive: isActive))
+    func voiceHighlight(isActive: Bool, playbackID: Int = 0) -> some View {
+        modifier(VoiceHighlight(isActive: isActive, playbackID: playbackID))
     }
     
     func voiceUnavailableNotice() -> some View {

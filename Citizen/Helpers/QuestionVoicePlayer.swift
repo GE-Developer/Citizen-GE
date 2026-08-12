@@ -15,9 +15,9 @@ final class QuestionVoicePlayer {
     }
     
     private(set) var playingPart: QuestionVoicePart?
+    private(set) var playbackGeneration = 0
     
     private var playbackTask: Task<Void, Never>?
-    private var playbackGeneration = 0
     
     private let voiceActing = VoiceActingManager.shared
     

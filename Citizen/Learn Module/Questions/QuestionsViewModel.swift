@@ -40,6 +40,10 @@ final class QuestionsViewModel: ObservableObject {
         voice.playingPart
     }
     
+    var voicePlaybackID: Int {
+        voice.playbackGeneration
+    }
+    
     var isVoiceActingEnabled: Bool {
         voice.isEnabled
     }

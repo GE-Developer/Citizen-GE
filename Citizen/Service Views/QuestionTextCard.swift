@@ -10,10 +10,12 @@ import SwiftUI
 struct QuestionTextCard: View {
     private let text: String
     private let isVoicing: Bool
+    private let voicePlaybackID: Int
     
-    init(text: String, isVoicing: Bool = false) {
+    init(text: String, isVoicing: Bool = false, voicePlaybackID: Int = 0) {
         self.text = text
         self.isVoicing = isVoicing
+        self.voicePlaybackID = voicePlaybackID
     }
     
     var body: some View {
@@ -31,7 +33,7 @@ extension QuestionTextCard {
             .fontDesign(.rounded)
             .multilineTextAlignment(.leading)
             .foregroundStyle(Color.citizen.mainText)
-            .voiceHighlight(isActive: isVoicing)
+            .voiceHighlight(isActive: isVoicing, playbackID: voicePlaybackID)
             .padding(.horizontal)
             .padding(.vertical, 10)
             .background {

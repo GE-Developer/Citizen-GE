@@ -1266,11 +1266,11 @@
 		AB10000300000006 /* Exam */ = {
 			isa = PBXGroup;
 			children = (
+				1F58AD0E302CFD3300B9F80C /* Exam */,
 				1F58AD12302CFD6F00B9F80C /* Exam Session */,
 				1F58AD11302CFD5700B9F80C /* Rules */,
 				1F58AD10302CFD4D00B9F80C /* History */,
 				1F58AD0F302CFD4300B9F80C /* Mistakes */,
-				1F58AD0E302CFD3300B9F80C /* Exam */,
 			);
 			path = Exam;
 			sourceTree = "<group>";

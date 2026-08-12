@@ -9,9 +9,11 @@ import SwiftUI
 
 struct VoiceHighlight: ViewModifier {
     private let isActive: Bool
+    private let playbackID: Int
     
-    init(isActive: Bool) {
+    init(isActive: Bool, playbackID: Int) {
         self.isActive = isActive
+        self.playbackID = playbackID
     }
     
     func body(content: Content) -> some View {
@@ -20,6 +22,7 @@ struct VoiceHighlight: ViewModifier {
                 ZStack {
                     if isActive {
                         VoiceHighlightWave()
+                            .id(playbackID)
                             .transition(.opacity)
                     }
                 }
@@ -50,10 +53,7 @@ private struct VoiceHighlightWave: View {
             .frame(width: width * 0.6, height: proxy.size.height)
             .offset(x: slide ? width : -width * 0.6)
             .onAppear {
-                withAnimation(
-                    .linear(duration: 1.4)
-                    .repeatForever(autoreverses: false)
-                ) {
+                withAnimation(.linear(duration: 1.4)) {
                     slide = true
                 }
             }

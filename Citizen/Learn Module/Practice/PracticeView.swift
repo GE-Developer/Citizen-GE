@@ -126,7 +126,8 @@ extension PracticeView {
     private var questionCard: some View {
         QuestionTextCard(
             text: vm.currentQuestion.question,
-            isVoicing: vm.playingVoicePart == .question
+            isVoicing: vm.playingVoicePart == .question,
+            voicePlaybackID: vm.voicePlaybackID
         )
         .onTapGesture { vm.questionTapped() }
         .allowsHitTesting(vm.isVoiceActingEnabled)
@@ -137,7 +138,10 @@ extension PracticeView {
             .font(.title3)
             .fontWeight(.medium)
             .fontDesign(.rounded)
-            .voiceHighlight(isActive: vm.playingVoicePart == .sentence)
+            .voiceHighlight(
+                isActive: vm.playingVoicePart == .sentence,
+                playbackID: vm.voicePlaybackID
+            )
             .onTapGesture { vm.sentenceTapped() }
             .allowsHitTesting(vm.isVoiceActingEnabled)
     }
