@@ -105,7 +105,7 @@ final class MainViewModel: ObservableObject {
     }
     
     var examPreview: String {
-        L10n("\(ExamConfig.fullDurationMin) Main.Exam.preview")
+        L10n("\(ExamConfig.fullMinutes(sections: catalog.categories.count)) Main.Exam.preview")
     }
     
     var refreshTitle: String {
