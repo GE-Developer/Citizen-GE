@@ -88,8 +88,7 @@ final class ExamSessionViewModel {
     }
     
     var pointsText: String {
-        let signed = pointsDelta > 0 ? "+\(pointsDelta)" : "\(pointsDelta)"
-        return L10n("Exam.Results.points \(signed)")
+        L10n("Exam.Results.points \(pointsDelta)")
     }
     
     var resultRows: [ExamResultRow] {

@@ -23,6 +23,39 @@ final class ExamRulesViewModel {
         return "\(required)/\(ExamConfig.totalQuestions(sections: sectionCount))"
     }
     
+    var eligibility: [ExamEligibilityRow] {
+        let subjects = repository.catalog.categories
+            .sorted { $0.index < $1.index }
+            .map(\.name)
+        
+        return [
+            ExamEligibilityRow(
+                id: "naturalization",
+                title: L10n("Exam.Rules.Who.naturalization"),
+                note: L10n("Exam.Rules.Who.naturalizationNote"),
+                subjects: subjects
+            ),
+            ExamEligibilityRow(
+                id: "spouse",
+                title: L10n("Exam.Rules.Who.spouse"),
+                note: L10n("Exam.Rules.Who.spouseNote"),
+                subjects: Array(subjects.prefix(2))
+            ),
+            ExamEligibilityRow(
+                id: "restoration",
+                title: L10n("Exam.Rules.Who.restoration"),
+                note: L10n("Exam.Rules.Who.restorationNote"),
+                subjects: Array(subjects.prefix(1))
+            ),
+            ExamEligibilityRow(
+                id: "exempt",
+                title: L10n("Exam.Rules.Who.exempt"),
+                note: L10n("Exam.Rules.Who.exemptNote"),
+                subjects: []
+            )
+        ]
+    }
+    
     private var sectionCount: Int {
         repository.catalog.categories.count
     }
@@ -67,33 +100,6 @@ final class ExamRulesViewModel {
             number: 5,
             title: L10n("Exam.Rules.Step5.title"),
             text: L10n("Exam.Rules.Step5.text")
-        )
-    ]
-    
-    let eligibility: [ExamEligibilityRow] = [
-        ExamEligibilityRow(
-            id: "naturalization",
-            title: L10n("Exam.Rules.Who.naturalization"),
-            note: L10n("Exam.Rules.Who.naturalizationNote"),
-            subjects: [.language, .history, .law]
-        ),
-        ExamEligibilityRow(
-            id: "spouse",
-            title: L10n("Exam.Rules.Who.spouse"),
-            note: L10n("Exam.Rules.Who.spouseNote"),
-            subjects: [.language, .history]
-        ),
-        ExamEligibilityRow(
-            id: "restoration",
-            title: L10n("Exam.Rules.Who.restoration"),
-            note: L10n("Exam.Rules.Who.restorationNote"),
-            subjects: [.language]
-        ),
-        ExamEligibilityRow(
-            id: "exempt",
-            title: L10n("Exam.Rules.Who.exempt"),
-            note: L10n("Exam.Rules.Who.exemptNote"),
-            subjects: []
         )
     ]
     
@@ -159,30 +165,7 @@ struct ExamEligibilityRow: Identifiable {
     let id: String
     let title: String
     let note: String
-    let subjects: [ExamSubject]
-}
-
-// MARK: - ExamSubject
-enum ExamSubject: Identifiable {
-    case language
-    case history
-    case law
-    
-    @MainActor
-    var title: String {
-        switch self {
-        case .language:
-            return L10n("Exam.Rules.Subject.language")
-        case .history:
-            return L10n("Exam.Rules.Subject.history")
-        case .law:
-            return L10n("Exam.Rules.Subject.law")
-        }
-    }
-    
-    var id: Self {
-        self
-    }
+    let subjects: [String]
 }
 
 // MARK: - ExamRuleTip

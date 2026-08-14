@@ -63,6 +63,16 @@ final class TopicStatsStorage {
         stack.saveContext()
     }
     
+    // MARK: - Orphan Cleanup
+    func removeOrphans(validTopicIDs: Set<String>) {
+        guard !validTopicIDs.isEmpty else { return }
+        
+        stack.batchDelete(
+            entityName: "TopicStatsEntity",
+            predicate: NSPredicate(format: "NOT (topicID IN %@)", validTopicIDs)
+        )
+    }
+    
     // MARK: - Sync
     func snapshotItems() -> [ProgressSnapshot.TopicStatsItem] {
         let request: NSFetchRequest<TopicStatsEntity> = TopicStatsEntity.fetchRequest()

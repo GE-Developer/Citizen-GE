@@ -18,7 +18,8 @@ private struct CatalogLoad {
 @Observable
 final class QuizRepository {
     private(set) var catalog = QuestionCatalog(categories: [])
-    
+    private(set) var questionIDs: Set<String> = []
+
     private var translations: [String: Question] = [:]
     private var questionIndex: [String: (Int, Int, Int)] = [:]
     private var searchIndex: [String: String] = [:]
@@ -26,6 +27,8 @@ final class QuizRepository {
     static let shared = QuizRepository()
     
     private let storage = AnswerStorage.shared
+    private let savedStore = SavedQuestionsStore.shared
+    private let topicStats = TopicStatsStorage.shared
     private let score = ScoreManager.shared
     private let languageManager = LanguageManager.shared
     private let geoLangCode = Language.georgian.id
@@ -359,7 +362,20 @@ final class QuizRepository {
         }
         
         questionIndex = index
+        questionIDs = Set(index.keys)
+        removeOrphanedProgress(in: hydrated)
+        
         return hydrated
+    }
+    
+    private func removeOrphanedProgress(in catalog: QuestionCatalog) {
+        guard !questionIDs.isEmpty else { return }
+        
+        let topicIDs = Set(catalog.categories.flatMap(\.topics).map(\.id))
+        
+        storage.removeOrphans(validQuestionIDs: questionIDs)
+        savedStore.removeOrphans(validQuestionIDs: questionIDs)
+        topicStats.removeOrphans(validTopicIDs: topicIDs)
     }
     
     private func isSolved(questionID: String) -> Bool {

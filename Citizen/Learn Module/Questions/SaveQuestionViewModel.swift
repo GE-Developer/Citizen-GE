@@ -27,6 +27,7 @@ final class SaveQuestionViewModel: ObservableObject {
     private let question: Question
     private let onChange: () -> Void
     private let savedStore = SavedQuestionsStore.shared
+    private let repository = QuizRepository.shared
     private let haptic = HapticsManager.shared
     
     init(question: Question, onChange: @escaping () -> Void) {
@@ -62,7 +63,7 @@ final class SaveQuestionViewModel: ObservableObject {
     }
     
     private func refresh() {
-        folders = savedStore.folders()
+        folders = savedStore.folders(validQuestionIDs: repository.questionIDs)
         savedFolderIDs = savedStore.folderIDs(for: question.id)
     }
 }

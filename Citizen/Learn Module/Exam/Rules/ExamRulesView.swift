@@ -314,8 +314,8 @@ extension ExamRulesView {
                 if row.isExempt {
                     chip(row.note, color: Color.citizen.greenLight)
                 } else {
-                    ForEach(row.subjects) { subject in
-                        chip(subject.title, color: color(for: subject))
+                    ForEach(row.subjects, id: \.self) { subject in
+                        chip(subject, color: Color.citizen.accent)
                     }
                 }
             }
@@ -368,19 +368,5 @@ extension ExamRulesView {
             .padding(.vertical, 5)
             .background(color.opacity(0.15))
             .clipShape(Capsule())
-    }
-}
-
-// MARK: - Logic
-extension ExamRulesView {
-    private func color(for subject: ExamSubject) -> Color {
-        switch subject {
-        case .language:
-            return Color.citizen.greenLight
-        case .history:
-            return Color.citizen.redLight
-        case .law:
-            return Color.citizen.yellowLight
-        }
     }
 }

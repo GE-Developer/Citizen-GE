@@ -1016,7 +1016,7 @@
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "კოდი წერილიდან"
+            "value" : "კოდი ელფოსტიდან"
           }
         },
         "ru" : {
@@ -1516,7 +1516,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Official list of examination questions"
+            "value" : "Official list of exam questions"
           }
         },
         "ka" : {
@@ -1585,7 +1585,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Practice with no intrusive ads"
+            "value" : "Practice without intrusive ads"
           }
         },
         "ka" : {
@@ -1999,7 +1999,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "By continuing you accept the [Terms of Use](citizen://terms) and the [Privacy Policy](citizen://privacy)."
+            "value" : "By continuing, you accept the [Terms of Use](citizen://terms) and the [Privacy Policy](citizen://privacy)."
           }
         },
         "ka" : {
@@ -2896,19 +2896,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Useful contacts will appear here."
+            "value" : "Contacts will appear here."
           }
         },
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "სასარგებლო კონტაქტები აქ გამოჩნდება."
+            "value" : "კონტაქტები აქ გამოჩნდება."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Полезные контакты появятся здесь."
+            "value" : "Контакты появятся здесь."
           }
         }
       }
@@ -3442,6 +3442,328 @@
         }
       }
     },
+    "Exam.History.Delete.confirm" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "წაშლა"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Очистить"
+          }
+        }
+      }
+    },
+    "Exam.History.Delete.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "All records of your attempts will be deleted. Your points and learning progress will remain untouched."
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "თქვენი მცდელობების ყველა ჩანაწერი წაიშლება. ქულები და სწავლის პროგრესი ხელუხლებელი დარჩება."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Все записи о попытках будут удалены. Баллы и прогресс обучения останутся нетронутыми."
+          }
+        }
+      }
+    },
+    "Exam.History.Delete.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Clear history?"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "წავშალოთ ისტორია?"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Очистить историю?"
+          }
+        }
+      }
+    },
+    "Exam.History.Empty.message" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Every exam you take will appear here: the date, the score and the questions you got wrong."
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "აქ გამოჩნდება ყველა ჩაბარებული გამოცდა: თარიღი, შედეგი და კითხვები, რომლებზეც შეცდით."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Здесь появится каждый пройденный экзамен: дата, результат и вопросы, в которых вы ошиблись."
+          }
+        }
+      }
+    },
+    "Exam.History.Empty.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No attempts yet"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "მცდელობები ჯერ არ არის"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Попыток пока нет"
+          }
+        }
+      }
+    },
+    "Exam.History.failed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Not passed"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ჩაუბარებელი"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Не сдан"
+          }
+        }
+      }
+    },
+    "Exam.History.mistakes %lld" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mistakes: %lld"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "შეცდომები: %lld"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибки: %lld"
+          }
+        }
+      }
+    },
+    "Exam.History.mistakesTitle" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Mistakes"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "შეცდომები"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Ошибки"
+          }
+        }
+      }
+    },
+    "Exam.History.noMistakes" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "No mistakes"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "შეცდომების გარეშე"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Без ошибок"
+          }
+        }
+      }
+    },
+    "Exam.History.passed" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Passed"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ჩაბარებული"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сдан"
+          }
+        }
+      }
+    },
+    "Exam.History.section" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Section"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "სექცია"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Раздел"
+          }
+        }
+      }
+    },
+    "Exam.History.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "History"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "ისტორია"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "История"
+          }
+        }
+      }
+    },
+    "Exam.History.today" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Today"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "დღეს"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сегодня"
+          }
+        }
+      }
+    },
+    "Exam.History.yesterday" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Yesterday"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "გუშინ"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Вчера"
+          }
+        }
+      }
+    },
     "Exam.Results.caption" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -3534,25 +3856,73 @@
         }
       }
     },
-    "Exam.Results.points %@" : {
+    "Exam.Results.points %lld" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ points"
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%+lld point"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%+lld points"
+                }
+              }
+            }
           }
         },
         "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ ქულა"
+          "variations" : {
+            "plural" : {
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%+lld ქულა"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%+lld ქულა"
+                }
+              }
+            }
           }
         },
         "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ баллов"
+          "variations" : {
+            "plural" : {
+              "few" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%+lld балла"
+                }
+              },
+              "many" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%+lld баллов"
+                }
+              },
+              "one" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%+lld балл"
+                }
+              },
+              "other" : {
+                "stringUnit" : {
+                  "state" : "translated",
+                  "value" : "%+lld баллов"
+                }
+              }
+            }
           }
         }
       }
@@ -3759,7 +4129,30 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Первая попытка — бесплатно"
+            "value" : "Первая попытка - бесплатно"
+          }
+        }
+      }
+    },
+    "Exam.Rules.Fee.noShow" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Missing your scheduled date counts as a used attempt"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "დანიშნულ დღეს გამოუცხადებლობა ჩაითვლება გამოყენებულ მცდელობად"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Неявка в назначенный день засчитывается как использованная попытка"
           }
         }
       }
@@ -3782,7 +4175,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Повторная — 40 лари в Грузии или 15 долларов за рубежом"
+            "value" : "Повторная - 40 лари в Грузии или 15 долларов за рубежом"
           }
         }
       }
@@ -3839,19 +4232,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Rules and fees change from time to time — check the State Services Development Agency website (sda.gov.ge) before your exam."
+            "value" : "Rules and fees change from time to time. Check the Public Service Development Agency website (sda.gov.ge) before your exam."
           }
         },
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "წესები და მოსაკრებლები დროდადრო იცვლება — გამოცდამდე გადაამოწმეთ სახელმწიფო სერვისების განვითარების სააგენტოს საიტზე (sda.gov.ge)."
+            "value" : "წესები და მოსაკრებლები დროდადრო იცვლება - გამოცდამდე გადაამოწმეთ სახელმწიფო სერვისების განვითარების სააგენტოს საიტზე (sda.gov.ge)."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Правила и суммы пошлин со временем меняются — перед экзаменом сверьтесь с сайтом Агентства развития государственных сервисов (sda.gov.ge)."
+            "value" : "Правила и суммы пошлин со временем меняются - перед экзаменом сверьтесь с сайтом Агентства развития государственных сервисов (sda.gov.ge)."
           }
         }
       }
@@ -3862,7 +4255,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "An electronic test in three blocks. These rules have applied since 1 May 2024."
+            "value" : "An electronic test in three blocks. These rules have been in effect since 1 May 2024."
           }
         },
         "ka" : {
@@ -3908,19 +4301,19 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Questions and the interface are in Georgian. A basic command of the language is expected — around A2–B1: vocabulary, grammar and reading comprehension."
+            "value" : "Questions and the interface are in Georgian. A basic command of the language is expected, around A2-B1: vocabulary, grammar and reading comprehension."
           }
         },
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "კითხვები და ინტერფეისი ქართულ ენაზეა. საჭიროა ენის საბაზისო ცოდნა — დაახლოებით A2–B1: ლექსიკა, გრამატიკა და წაკითხულის გაგება."
+            "value" : "კითხვები და ინტერფეისი ქართულ ენაზეა. საჭიროა ენის საბაზისო ცოდნა - დაახლოებით A2-B1: ლექსიკა, გრამატიკა და წაკითხულის გაგება."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Вопросы и интерфейс — на грузинском языке. Требуется базовое владение, примерно уровень A2–B1: лексика, грамматика и понимание прочитанного."
+            "value" : "Вопросы и интерфейс - на грузинском языке. Требуется базовое владение, примерно уровень A2-B1: лексика, грамматика и понимание прочитанного."
           }
         }
       }
@@ -3954,13 +4347,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Since 1 May 2024 the test is taken before applying for citizenship — passing it is a precondition for the application."
+            "value" : "Since 1 May 2024 the test is taken before applying for citizenship: passing it is a precondition for the application."
           }
         },
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "2024 წლის 1 მაისიდან ტესტი ბარდება მოქალაქეობაზე განაცხადის შეტანამდე — ჩაბარებული გამოცდა განაცხადის წინაპირობაა."
+            "value" : "2024 წლის 1 მაისიდან ტესტი ბარდება მოქალაქეობაზე განაცხადის შეტანამდე - ჩაბარებული გამოცდა განაცხადის წინაპირობაა."
           }
         },
         "ru" : {
@@ -4012,7 +4405,7 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Записаться можно в Агентстве, Доме юстиции или в консульстве за рубежом. Дату выбирают из электронного календаря в пределах двух месяцев, перенести — не позже чем за 48 часов."
+            "value" : "Записаться можно в Агентстве, Доме юстиции или в консульстве за рубежом. Дату выбирают из электронного календаря в пределах двух месяцев, перенести - не позже чем за 48 часов."
           }
         }
       }
@@ -4098,13 +4491,13 @@
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "სწორი პასუხი — 1 ქულა. ჩასაბარებლად საჭიროა მინიმუმ 7 ქულა თითოეულ ბლოკში. შედეგი ეკრანზე ჩნდება ტესტისთანავე."
+            "value" : "სწორი პასუხი - 1 ქულა. ჩასაბარებლად საჭიროა მინიმუმ 7 ქულა თითოეულ ბლოკში. შედეგი ეკრანზე ჩნდება ტესტისთანავე."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Верный ответ — 1 балл. Чтобы сдать, нужно набрать минимум 7 баллов в каждом блоке. Результат появляется на экране сразу после теста."
+            "value" : "Верный ответ - 1 балл. Чтобы сдать, нужно набрать минимум 7 баллов в каждом блоке. Результат появляется на экране сразу после теста."
           }
         }
       }
@@ -4201,94 +4594,25 @@
         }
       }
     },
-    "Exam.Rules.Subject.history" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "History"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ისტორია"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "История"
-          }
-        }
-      }
-    },
-    "Exam.Rules.Subject.language" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Language"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ენა"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Язык"
-          }
-        }
-      }
-    },
-    "Exam.Rules.Subject.law" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Law"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "სამართალი"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Право"
-          }
-        }
-      }
-    },
     "Exam.Rules.Tip1.text" : {
       "extractionState" : "manual",
       "localizations" : {
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Exam questions come from the public bank — about 200 per subject. It was updated in May 2024, so older lists are out of date."
+            "value" : "Exam questions come from the public bank, about 200 per subject. It was updated in May 2024, so older lists are out of date."
           }
         },
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "გამოცდის კითხვები აღებულია ღია ბანკიდან — დაახლოებით 200 თითოეულ საგანში. 2024 წლის მაისში ბანკი განახლდა, ამიტომ ძველი სიები აღარ გამოდგება."
+            "value" : "გამოცდის კითხვები აღებულია ღია ბანკიდან - დაახლოებით 200 თითოეულ საგანში. 2024 წლის მაისში ბანკი განახლდა, ამიტომ ძველი სიები აღარ გამოდგება."
           }
         },
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Вопросы экзамена берут из открытого банка — около 200 на каждый предмет. В мае 2024 года банк обновили, поэтому старые списки уже не подходят."
+            "value" : "Вопросы экзамена берут из открытого банка - около 200 на каждый предмет. В мае 2024 года банк обновили, поэтому старые списки уже не подходят."
           }
         }
       }
@@ -4391,13 +4715,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Practise against the clock"
+            "value" : "Practice against the clock"
           }
         },
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ივარჯიშეთ დროზე"
+            "value" : "ივარჯიშეთ ტაიმერით"
           }
         },
         "ru" : {
@@ -4449,7 +4773,53 @@
         "ru" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Тест — не последний шаг"
+            "value" : "Тест - не последний шаг"
+          }
+        }
+      }
+    },
+    "Exam.Rules.Tip5.text" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Those who have taken the exam call the law questions the trickiest: the wording is legal and the options look alike. Learn the exact phrasing, not the general idea."
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "გამოცდის ჩამბარებლები სამართლის კითხვებს ყველაზე რთულად მიიჩნევენ: ფორმულირება იურიდიულია და ვარიანტები ერთმანეთს ჰგავს. ისწავლეთ ზუსტი ფორმულირება და არა ზოგადი აზრი."
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Сдававшие называют вопросы по праву самыми коварными: формулировки юридические, а варианты похожи друг на друга. Учите точную формулировку, а не общий смысл."
+          }
+        }
+      }
+    },
+    "Exam.Rules.Tip5.title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Law is the hardest block"
+          }
+        },
+        "ka" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "სამართალი ყველაზე რთული ბლოკია"
+          }
+        },
+        "ru" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Право - самый сложный блок"
           }
         }
       }
@@ -4552,7 +4922,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Ordinary naturalisation"
+            "value" : "Ordinary naturalization"
           }
         },
         "ka" : {
@@ -4581,7 +4951,7 @@
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "10 წელი ცხოვრება"
+            "value" : "10 წლის ცხოვრება"
           }
         },
         "ru" : {
@@ -4673,7 +5043,7 @@
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "5 წელი ცხოვრება"
+            "value" : "5 წლის ცხოვრება"
           }
         },
         "ru" : {
@@ -4788,7 +5158,7 @@
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "უპასუხო კითხვა: %lld. ამ სექციაში დაბრუნებას ვეღარ შეძლებთ."
+            "value" : "უპასუხო კითხვები: %lld. ამ სექციაში დაბრუნებას ვეღარ შეძლებთ."
           }
         },
         "ru" : {
@@ -6576,7 +6946,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Every topic and question open from the start, nothing locked"
+            "value" : "Every topic and question is open from the start, nothing locked"
           }
         },
         "ka" : {
@@ -6720,7 +7090,7 @@
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ყველა ხატულა და ფერადი თემა"
+            "value" : "აპლიკაციის ყველა ხატულა და ფერადი თემა"
           }
         },
         "ru" : {
@@ -7176,7 +7546,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Don’t forget to cancel your subscription!"
+            "value" : "Don't forget to cancel your subscription!"
           }
         },
         "ka" : {
@@ -7360,7 +7730,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "**Citizen** is your companion on the path to Georgian citizenship.  **The app helps you prepare for the exam** in Georgian language, history of Georgia, and fundamentals of law: study questions topic by topic, work on your mistakes, and test yourself in a realistic exam simulation.  **Learn Georgian right inside the questions**: tap any word to see its translation, transcription, and grammar, and save the ones you need to your personal dictionary.  Citizen is more than exam prep - **it's your way to a new home**."
+            "value" : "**Citizen** is your companion on the path to Georgian citizenship.  **The app helps you prepare for the exam** in the Georgian language, history of Georgia, and fundamentals of law: study questions topic by topic, work on your mistakes, and test yourself in a realistic exam simulation.  **Learn Georgian right inside the questions**: tap any word to see its translation, transcription, and grammar, and save the ones you need to your personal dictionary.  Citizen is more than exam prep - **it's your way to a new home**."
           }
         },
         "ka" : {
@@ -7452,7 +7822,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Citizen is an independent preparation platform.\n\nThe app is not an official resource and is not affiliated with, endorsed or sponsored by the Government of Georgia or any of its state bodies.\n\nAll materials are provided for informational purposes only, do not replace official sources and do not guarantee any exam result."
+            "value" : "Citizen is an independent preparation platform.\n\nThe app is not an official resource and is not affiliated with, endorsed by, or sponsored by the Government of Georgia or any of its state bodies.\n\nAll materials are provided for informational purposes only, do not replace official sources and do not guarantee any exam result."
           }
         },
         "ka" : {
@@ -9208,7 +9578,7 @@
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "სერვერზე შენახვა ვერ მოხერხდა. მოგვიანებით ხელახლა ვცდით"
+            "value" : "სერვერზე შენახვა ვერ მოხერხდა. მოგვიანებით ხელახლა შევეცდებით"
           }
         },
         "ru" : {
@@ -9530,7 +9900,7 @@
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "ნაგულისხმევი"
+            "value" : "ნაგულისხმევი ხატულა"
           }
         },
         "ru" : {
@@ -10444,13 +10814,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Unknown error occurred."
+            "value" : "An unknown error occurred."
           }
         },
         "ka" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "დაფიქსირდა გაურკვეველი შეცდომა."
+            "value" : "დაფიქსირდა უცნობი შეცდომა."
           }
         },
         "ru" : {
@@ -10467,7 +10837,7 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Purchase was cancelled by user."
+            "value" : "The purchase was canceled."
           }
         },
         "ka" : {
@@ -10710,397 +11080,6 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "Слово"
-          }
-        }
-      }
-    },
-    "Exam.History.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "History"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ისტორია"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "История"
-          }
-        }
-      }
-    },
-    "Exam.History.Empty.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No attempts yet"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "მცდელობები ჯერ არ არის"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Попыток пока нет"
-          }
-        }
-      }
-    },
-    "Exam.History.Empty.message" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Every exam you take will appear here: the date, the score and the questions you got wrong."
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "აქ გამოჩნდება ყველა ჩაბარებული გამოცდა: თარიღი, შედეგი და კითხვები, რომლებზეც შეცდით."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Здесь появится каждый пройденный экзамен: дата, результат и вопросы, в которых вы ошиблись."
-          }
-        }
-      }
-    },
-    "Exam.History.today" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Today"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "დღეს"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сегодня"
-          }
-        }
-      }
-    },
-    "Exam.History.yesterday" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Yesterday"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "გუშინ"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Вчера"
-          }
-        }
-      }
-    },
-    "Exam.History.passed" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Passed"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ჩაბარებული"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сдан"
-          }
-        }
-      }
-    },
-    "Exam.History.failed" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Not passed"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "ჩაუბარებელი"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Не сдан"
-          }
-        }
-      }
-    },
-    "Exam.History.section" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Section"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "სექცია"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Раздел"
-          }
-        }
-      }
-    },
-    "Exam.History.noMistakes" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No mistakes"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "შეცდომების გარეშე"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Без ошибок"
-          }
-        }
-      }
-    },
-    "Exam.History.mistakes %lld" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mistakes: %lld"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "შეცდომები: %lld"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ошибки: %lld"
-          }
-        }
-      }
-    },
-    "Exam.History.Delete.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clear history?"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "წავშალოთ ისტორია?"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Очистить историю?"
-          }
-        }
-      }
-    },
-    "Exam.History.Delete.message" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "All records of your attempts will be deleted. Your points and learning progress stay untouched."
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "თქვენი მცდელობების ყველა ჩანაწერი წაიშლება. ქულები და სწავლის პროგრესი ხელუხლებელი დარჩება."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Все записи о попытках будут удалены. Баллы и прогресс обучения останутся нетронутыми."
-          }
-        }
-      }
-    },
-    "Exam.History.Delete.confirm" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Clear"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "წაშლა"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Очистить"
-          }
-        }
-      }
-    },
-    "Exam.History.mistakesTitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mistakes"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "შეცდომები"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ошибки"
-          }
-        }
-      }
-    },
-    "Exam.Rules.Fee.noShow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Missing your scheduled date counts as a used attempt"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "დანიშნულ დღეს გამოუცხადებლობა ჩაითვლება გამოყენებულ მცდელობად"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Неявка в назначенный день засчитывается как использованная попытка"
-          }
-        }
-      }
-    },
-    "Exam.Rules.Tip5.title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Law is the hardest block"
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "სამართალი ყველაზე რთული ბლოკია"
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Право — самый сложный блок"
-          }
-        }
-      }
-    },
-    "Exam.Rules.Tip5.text" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Those who have taken the exam call the law questions the trickiest: the wording is legal and the options look alike. Learn the exact phrasing, not the general idea."
-          }
-        },
-        "ka" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "გამოცდის ჩამბარებლები სამართლის კითხვებს ყველაზე რთულად მიიჩნევენ: ფორმულირება იურიდიულია და ვარიანტები ერთმანეთს ჰგავს. ისწავლეთ ზუსტი ფორმულირება და არა ზოგადი აზრი."
-          }
-        },
-        "ru" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Сдававшие называют вопросы по праву самыми коварными: формулировки юридические, а варианты похожи друг на друга. Учите точную формулировку, а не общий смысл."
           }
         }
       }

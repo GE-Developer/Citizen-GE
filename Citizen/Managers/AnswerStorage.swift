@@ -89,6 +89,20 @@ final class AnswerStorage {
         )
     }
     
+    // MARK: - Orphan Cleanup
+    func removeOrphans(validQuestionIDs: Set<String>) {
+        guard !validQuestionIDs.isEmpty else { return }
+        
+        stack.batchDelete(
+            entityName: "QuestionEntity",
+            predicate: NSPredicate(format: "NOT (id IN %@)", validQuestionIDs)
+        )
+        stack.batchDelete(
+            entityName: "GlobalMistakeEntity",
+            predicate: NSPredicate(format: "NOT (questionID IN %@)", validQuestionIDs)
+        )
+    }
+    
     // MARK: - Sync
     func snapshotAnswers() -> [ProgressSnapshot.AnsweredQuestion] {
         fetchAllAnswered()

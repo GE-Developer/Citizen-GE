@@ -19,7 +19,7 @@ final class SavedQuestionsStore {
     
     private init() {}
     
-    func folders() -> [QuestionFolder] {
+    func folders(validQuestionIDs: Set<String>) -> [QuestionFolder] {
         let request = QuestionFolderEntity.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "createdAt", ascending: false)]
         
@@ -33,7 +33,7 @@ final class SavedQuestionsStore {
                     return QuestionFolder(
                         id: id,
                         name: name,
-                        count: count(inFolder: id)
+                        count: questionIDs(inFolder: id).intersection(validQuestionIDs).count
                     )
                 }
         } catch {
@@ -92,12 +92,15 @@ final class SavedQuestionsStore {
         return (try? context.count(for: request)) ?? 0
     }
     
-    func savedQuestionsCount() -> Int {
-        let request = SavedQuestionEntity.fetchRequest()
-        let items = (try? context.fetch(request)) ?? []
+    func removeOrphans(validQuestionIDs: Set<String>) {
+        guard !validQuestionIDs.isEmpty else { return }
         
-        return Set(items.compactMap { $0.questionID }).count
+        stack.batchDelete(
+            entityName: "SavedQuestionEntity",
+            predicate: NSPredicate(format: "NOT (questionID IN %@)", validQuestionIDs)
+        )
     }
+    
     
     @discardableResult
     func toggle(questionID: String, folderID: String) -> Bool {
@@ -225,10 +228,4 @@ final class SavedQuestionsStore {
         return ((try? context.count(for: request)) ?? 0) > 0
     }
     
-    private func count(inFolder folderID: String) -> Int {
-        let request = SavedQuestionEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "folderID == %@", folderID)
-        
-        return (try? context.count(for: request)) ?? 0
-    }
 }
