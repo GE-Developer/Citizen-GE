@@ -30,7 +30,9 @@ struct FlowLayout: Layout {
                 line += 1
                 continue
             }
-            let size = sub.sizeThatFits(.unspecified)
+            
+            let size = fittedSize(of: sub, maxWidth: maxWidth)
+            
             if x + size.width > maxWidth, x > 0 {
                 y += lineHeight + lineSpacing
                 x = 0
@@ -38,15 +40,18 @@ struct FlowLayout: Layout {
                 line += 1
                 if isLimitReached(line) { break }
             }
+            
             x += size.width
             lineHeight = max(lineHeight, size.height)
             totalWidth = max(totalWidth, x)
         }
-        return CGSize(width: totalWidth, height: y + lineHeight)
+        
+        return CGSize(width: min(totalWidth, maxWidth), height: y + lineHeight)
     }
     
     func placeSubviews(in bounds: CGRect, proposal: ProposedViewSize, subviews: Subviews, cache: inout ()) {
         let maxWidth = bounds.width
+        
         var x: CGFloat = 0
         var y: CGFloat = 0
         var lineHeight: CGFloat = 0
@@ -65,12 +70,15 @@ struct FlowLayout: Layout {
                 line += 1
                 continue
             }
-            let size = sub.sizeThatFits(.unspecified)
+            
+            let size = fittedSize(of: sub, maxWidth: maxWidth)
+            
             if x + size.width > maxWidth, x > 0 {
                 y += lineHeight + lineSpacing
                 x = 0
                 lineHeight = 0
                 line += 1
+                
                 if isLimitReached(line) {
                     sub.place(at: bounds.origin, anchor: .topLeading, proposal: .zero)
                     continue
@@ -81,9 +89,18 @@ struct FlowLayout: Layout {
                 anchor: .topLeading,
                 proposal: ProposedViewSize(size)
             )
+            
             x += size.width
             lineHeight = max(lineHeight, size.height)
         }
+    }
+    
+    private func fittedSize(of subview: LayoutSubviews.Element, maxWidth: CGFloat) -> CGSize {
+        let ideal = subview.sizeThatFits(.unspecified)
+        
+        guard maxWidth.isFinite, ideal.width > maxWidth else { return ideal }
+        
+        return subview.sizeThatFits(ProposedViewSize(width: maxWidth, height: nil))
     }
     
     private func isLimitReached(_ line: Int) -> Bool {
